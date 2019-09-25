@@ -35,7 +35,8 @@ export default {
    */
   plugins: [
     { src:'~/plugins/buefy', ssr: false },
-    { src:'~/plugins/auth', ssr: false }
+    { src:'~/plugins/auth', ssr: false },
+    { src:'~/plugins/common', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules

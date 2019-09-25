@@ -60,7 +60,6 @@
   </div>
 </template>
 <script>
-import { ToastProgrammatic as Toast } from 'buefy'
 import Btn from '~/components/general/Button'
 export default {
   components: {
@@ -87,11 +86,7 @@ export default {
           this.submit()
           return
         }
-        Toast.open({
-          message: 'Form is not valid! Please check the fields.',
-          type: 'is-danger',
-          position: 'is-bottom'
-        })
+        this.showMsg('Form is not valid! Please check the fields.')
       })
     },
     submit() {
