@@ -50,7 +50,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     '@nuxtjs/pwa',
-    'nuxt-svg-loader'
+    'nuxt-svg-loader',
+    'nuxt-validate'
   ],
   /*
    ** Axios module configuration

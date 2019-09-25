@@ -1,6 +1,7 @@
 <template>
   <div>
     <button
+      :type="type"
       class="button is-fullwidth"
       :class="[colorClass, { 'is-outlined': hover }]"
       :disabled="disabled"
