@@ -8,8 +8,8 @@
           <div class="column">
             <p class="has-text-centered">
               You can also
-              <a v-if="!isEmail" @click="toggleEmail">login with email</a>
-              <a v-else @click="toggleEmail">login with Github or GitLab</a>
+              <a v-if="!isEmail" @click="toggleEmail">continue with email</a>
+              <a v-else @click="toggleEmail">continue with Github or GitLab</a>
             </p>
           </div>
         </div>

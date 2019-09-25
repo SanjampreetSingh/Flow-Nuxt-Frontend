@@ -126,31 +126,38 @@ export default {
       this.email = ''
       this.password = ''
     },
-    register() {
-      this.$axios
-        .post('/register/', this.user)
-        .then((response) => {
-          console.log(response)
+    async register() {
+      try {
+        await this.$axios.post('register/', {
+          email: this.user.email,
+          password: this.user.password
         })
-        .catch((error) => {
-          console.log(error)
-        })
-    },
-    login() {
-      this.$auth
-        .loginWith('local', {
+
+        await this.$auth.loginWith('local', {
           data: {
             email: this.user.email,
             password: this.user.password
           }
         })
-        .then((response) => {
-          console.log(response)
-          this.$router.replace('/dashboard/')
+
+        this.$router.replace('/dashboard/')
+      } catch (e) {
+        this.error = e.response.data.message
+      }
+    },
+    async login() {
+      try {
+        await this.$auth.loginWith('local', {
+          data: {
+            email: this.user.email,
+            password: this.user.password
+          }
         })
-        .catch((error) => {
-          console.log(error)
-        })
+        this.$router.replace('/dashboard/')
+      } catch (e) {
+        this.error = e.response.data.message
+        this.showMsg(e.response.data.message)
+      }
     }
   }
 }

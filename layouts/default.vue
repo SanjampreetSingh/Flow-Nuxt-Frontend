@@ -7,6 +7,7 @@
 <script>
 import NavBar from '~/components/layout/default/NavBar'
 export default {
+  middleware: 'guest',
   components: {
     NavBar
   }

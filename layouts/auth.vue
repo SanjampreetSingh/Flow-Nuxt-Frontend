@@ -1,8 +1,10 @@
 <template>
-  <div></div>
+  <div>
+    <nuxt />
+  </div>
 </template>
 <script>
 export default {
-  layout: 'auth'
+  middleware: 'auth'
 }
 </script>
