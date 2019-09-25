@@ -13,11 +13,11 @@
             <b-navbar-item href="#">Documentation</b-navbar-item>
             <b-navbar-item tag="div">
               <nuxt-link
-                class="button is-dark"
-                to="login"
+                to="/login"
                 exact-active-class="is-static"
+                class="button"
               >
-                Get Started
+                Get started
               </nuxt-link>
             </b-navbar-item>
           </template>

@@ -13,7 +13,7 @@
           :disabled="disabled"
           @click.native="github_login"
         >
-          <i id="github-icon" class="fab fa-1x fa-github"></i>
+          <i id="github-icon" class="fab fa-github"></i>
           <span class="content">Continue with Github</span>
         </btn>
       </div>
@@ -64,8 +64,8 @@ export default {
   width: 10%;
   height: auto;
 }
-.github-icon {
-  font-size: 24px;
+#github-icon {
+  font-size: 26px;
 }
 .github-btn:hover .github-icon {
   color: '#000';

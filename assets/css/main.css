@@ -1,0 +1,4 @@
+.input:active, .input:focus, .is-active.input, .is-active.textarea, .is-focused.input, .is-focused.textarea{
+  box-shadow:unset;
+  border-color: #000; 
+}
