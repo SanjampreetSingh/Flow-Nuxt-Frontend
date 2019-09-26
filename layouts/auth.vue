@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="verified" class="columns is-marginless">
+    <div v-if="!verified" class="columns is-marginless">
       <div class="column is-paddingless has-background-danger">
         <p
           id="email-alert"

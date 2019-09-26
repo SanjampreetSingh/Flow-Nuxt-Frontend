@@ -8,7 +8,20 @@
     <form @submit.prevent="validate">
       <div class="columns is-centered">
         <div class="column is-3 pt">
+          <p v-if="passwordField">
+            <a>
+              <i
+                id="arrow-left"
+                class="fa fa-arrow-left has-text-info"
+                @click="resetForm"
+              >
+              </i>
+            </a>
+            <strong>Email:</strong>
+            {{ user.email }}
+          </p>
           <b-field
+            v-else
             :type="{ 'is-danger': errors.has('email') }"
             :message="errors.first('email')"
           >
@@ -52,7 +65,9 @@
             :loading="loader"
             :disabled="disabled"
           >
-            <span class="content">Continue</span>
+            <span class="content" v-if="key == 1">Register</span>
+            <span class="content" v-else-if="key == 2">Login</span>
+            <span class="content" v-else>Continue</span>
           </btn>
         </div>
       </div>
@@ -96,6 +111,7 @@ export default {
           .then((response) => {
             this.key = response.data.data.key
             this.passwordField = true
+            this.showMsg(response.data.message, 'is-info')
           })
           .catch((error) => {
             console.log(error)
@@ -160,5 +176,8 @@ export default {
 <style scoped>
 .pt {
   padding-top: 0;
+}
+#arrow-left {
+  margin-right: 5px;
 }
 </style>
