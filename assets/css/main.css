@@ -1,7 +1,17 @@
+a{
+  color: #0070F3;   
+}
+a:hover{
+  text-decoration: underline;
+  color: #0070F3; 
+}
 .input:active, .input:focus, .is-active.input, .is-active.textarea, .is-focused.input, .is-focused.textarea{
   box-shadow:unset;
   border-color: #000; 
 }
 .navbar-link.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover{
   color: #000000;
+}
+.section-border-bottom {
+  border-bottom: 1px solid #eaeaea;
 }

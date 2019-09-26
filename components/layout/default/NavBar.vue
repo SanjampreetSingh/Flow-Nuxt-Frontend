@@ -13,11 +13,12 @@
             <b-navbar-item href="#">Documentation</b-navbar-item>
             <b-navbar-item tag="div">
               <nuxt-link
+                id="login-btn"
                 to="/login"
                 exact-active-class="is-static"
                 class="button"
               >
-                Get started
+                Get Started
               </nuxt-link>
             </b-navbar-item>
           </template>
@@ -35,6 +36,22 @@ export default {
 }
 </script>
 <style scoped>
+#login-btn {
+  background: #000;
+  color: #fff;
+  transition: 0.4s;
+}
+#login-btn:hover {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+#login-btn.is-static {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  box-shadow: none;
+}
 #logo {
   width: 25%;
   height: auto;

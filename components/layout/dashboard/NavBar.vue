@@ -1,37 +1,33 @@
 <template>
   <header>
     <div class="container">
-      <b-navbar>
-        <template slot="brand">
-          <b-navbar-item tag="router-link" :to="{ path: '/' }">
-            <logo id="logo" />
-          </b-navbar-item>
-        </template>
-        <template slot="end">
-          <b-navbar-item>
-            <nuxt-link to="/dashboard/ready-models/demo">
-              Demo
-            </nuxt-link>
-          </b-navbar-item>
-          <b-navbar-item>
-            <nuxt-link to="/dashboard">
-              Documentation
-            </nuxt-link>
-          </b-navbar-item>
-          <b-navbar-dropdown label="Settings">
+      <client-only>
+        <b-navbar>
+          <template slot="brand">
+            <b-navbar-item tag="router-link" :to="{ path: '/' }">
+              <logo id="logo" />
+            </b-navbar-item>
+          </template>
+          <template slot="end">
             <b-navbar-item>
-              <nuxt-link to="/dashboard">
-                Profile
-              </nuxt-link>
+              <nuxt-link to="/dashboard/ready-models/demo">Demo</nuxt-link>
             </b-navbar-item>
             <b-navbar-item>
-              <a @click="logout">Log out</a>
+              <nuxt-link to="/dashboard">Documentation</nuxt-link>
             </b-navbar-item>
-          </b-navbar-dropdown>
-        </template>
-      </b-navbar>
+            <b-navbar-dropdown label="Settings">
+              <b-navbar-item>
+                <nuxt-link to="/dashboard">Profile</nuxt-link>
+              </b-navbar-item>
+              <b-navbar-item>
+                <a @click="logout">Log out</a>
+              </b-navbar-item>
+            </b-navbar-dropdown>
+          </template>
+        </b-navbar>
+      </client-only>
     </div>
-    <section id="nav-list">
+    <div id="nav-list">
       <div class="tabs container">
         <ul>
           <li
@@ -46,7 +42,7 @@
           </li>
         </ul>
       </div>
-    </section>
+    </div>
   </header>
 </template>
 <script>
@@ -63,10 +59,6 @@ export default {
           name: 'Overview',
           link: '/dashboard/'
         },
-        // {
-        //   name: 'Applications',
-        //   link: '/dashboard/application/'
-        // },
         {
           name: 'Usage',
           link: '/dashboard/usage/'
@@ -92,6 +84,7 @@ export default {
 }
 .tabs a {
   color: #949292;
+  border-bottom-width: 0;
 }
 .tabs li.is-active a {
   border-bottom-color: #000;
@@ -107,5 +100,8 @@ export default {
 }
 #nav-list {
   border-bottom: 1px solid #dbdbdb;
+}
+.navbar-item a {
+  color: #000;
 }
 </style>

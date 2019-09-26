@@ -1,10 +1,10 @@
-import createRepository from '~/api/Repository.js'
+import createRepository from '~/api/repository'
 export default (ctx, inject) => {
-	const repositoryWithAxios = createRepository(ctx.$axios)
-
-	const repositories = {
-			posts: repositoryWithAxios('posts'),
-	}
-
-	inject('repositories', repositories)
+  // inject the repository in the context (ctx.app.$repository)
+  // And in the Vue instances (this.$repository in your components)
+  const repositoryWithAxios = createRepository(ctx.$axios)
+  const repositories = {
+    application: repositoryWithAxios('user/app')
+  }
+  inject('repositories', repositories)
 }

@@ -11,12 +11,14 @@
       </div>
     </div>
     <nav-bar />
-    <nuxt />
+    <div class="container">
+      <nuxt />
+    </div>
   </div>
 </template>
 <script>
 import { mapGetters } from 'vuex'
-import NavBar from '~/components/layout/auth/NavBar'
+import NavBar from '~/components/layout/dashboard/NavBar'
 export default {
   middleware: 'auth',
   components: {
