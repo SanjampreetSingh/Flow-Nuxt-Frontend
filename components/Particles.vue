@@ -6,17 +6,10 @@
   </div>
 </template>
 <script>
+if (process.browser) {
+  require('particles.js')
+}
 export default {
-  head() {
-    return {
-      script: [
-        {
-          src:
-            'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js'
-        }
-      ]
-    }
-  },
   mounted() {
     this.initParticles()
   },

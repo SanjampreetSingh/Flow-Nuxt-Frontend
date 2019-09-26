@@ -18,7 +18,8 @@
     "buefy": "^0.8.4",
     "nuxt": "^2.0.0",
     "nuxt-svg-loader": "^1.0.1",
-    "nuxt-validate": "^1.0.1"
+    "nuxt-validate": "^1.0.1",
+    "particles.js": "^2.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
