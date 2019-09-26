@@ -7,6 +7,9 @@
         <p>App Details</p>
       </div>
       <div class="column">
+        <b-message v-if="formStatus" type="is-success">
+          {{ formStatus }}
+        </b-message>
         <form @submit.prevent="validate">
           <client-only>
             <b-field
@@ -40,7 +43,12 @@
               />
             </div>
             <div class="column">
-              <btn type="submit" color="is-info">
+              <btn
+                type="submit"
+                color="is-dark"
+                :loading="loader"
+                :disabled="disabled"
+              >
                 <span>Create</span>
               </btn>
             </div>
@@ -92,12 +100,18 @@ export default {
     },
     async submit() {
       const vm = this
-      const response = await this.$repositories.application.create({
-        user: vm.loggedInUser.id,
-        name: vm.application.name,
-        reference_url: vm.loggedInUser.id + '-' + vm.slug
-      })
-      console.log(response)
+      try {
+        await this.$repositories.application.create({
+          user: vm.loggedInUser.id,
+          name: vm.application.name,
+          reference_url: vm.loggedInUser.id + '-' + vm.slug
+        })
+        vm.formStatus = 'Application created successfully.'
+      } catch (e) {
+        vm.showMsg('Application already exists with this name.')
+      }
+      this.loader = false
+      this.disabled = false
     }
   }
 }

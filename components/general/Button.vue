@@ -51,6 +51,11 @@ export default {
     hover(newVal, oldVal) {
       if (!newVal) this.colorClass = this.color
       else this.colorClass = ''
+    },
+    disabled(val) {
+      if (val) {
+        this.colorClass = this.color
+      }
     }
   },
   methods: {

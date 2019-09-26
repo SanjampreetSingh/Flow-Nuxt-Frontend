@@ -2,7 +2,8 @@ export default {
   data() {
     return {
       loader: false,
-      disabled: false
+      disabled: false,
+      formStatus: ''
     }
   },
   methods: {
