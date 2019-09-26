@@ -1,3 +1,4 @@
+<!-- Login and Register through Email -->
 <template>
   <div>
     <div class="columns is-centered">
@@ -76,10 +77,12 @@
 </template>
 <script>
 import Btn from '~/components/general/Button'
+import formMixin from '~/mixins/formMixin.js'
 export default {
   components: {
     Btn
   },
+  mixins: [formMixin],
   data() {
     return {
       user: {
@@ -87,23 +90,10 @@ export default {
         password: ''
       },
       key: null,
-      passwordField: false,
-      disabled: false,
-      loader: false
+      passwordField: false
     }
   },
   methods: {
-    validate() {
-      this.$validator.validateAll().then((valid) => {
-        if (valid) {
-          this.loader = true
-          this.disabled = true
-          this.submit()
-          return
-        }
-        this.showMsg('Form is not valid! Please check the fields.')
-      })
-    },
     submit() {
       if (!this.key) {
         this.$axios
