@@ -55,6 +55,7 @@ export default {
     disabled(val) {
       if (val) {
         this.colorClass = this.color
+        this.hover = false
       }
     }
   },
