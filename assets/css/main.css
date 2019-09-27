@@ -2,12 +2,12 @@
   color: #2d2d2d;
 }
 ::-moz-selection { /* Code for Firefox */
-  color: #fff;
-  background: #d74c9b;
+  color: #000;
+  background: #f2ccff;
 }
 ::selection {
-  color: #fff;
-  background: #d74c9b;
+  color: #000;
+  background: #f2ccff;
 }
 a{
   color: #0070F3;   
@@ -34,4 +34,7 @@ a:hover{
 }
 .card:hover {
   box-shadow: 13px 13px 20px 0px rgba(0, 0, 0, 0.219);
+}
+.fix-height {
+  min-height: 40px;
 }

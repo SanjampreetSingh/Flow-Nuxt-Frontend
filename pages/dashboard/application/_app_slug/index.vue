@@ -1,6 +1,9 @@
 <template>
   <div>
-    <section class="section has-background-light section-border-bottom">
+    <section
+      v-if="application.id != null"
+      class="section has-background-light section-border-bottom"
+    >
       <div class="container">
         <div class="columns">
           <div class="column is-1 is-hidden-mobile">
@@ -58,12 +61,43 @@
                   <p>
                     <i class="far fa-3x fa-frown-open"></i>
                   </p>
-                  <p>Nothing here.</p>
+                  <p>Activate models.</p>
                 </div>
               </section>
             </template>
           </b-table>
         </client-only>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h1 class="title is-3">Modules</h1>
+        <div v-if="modules.length > 0" class="columns">
+          <div v-for="module in modules" :key="module.id" class="column is-4">
+            <div class="card">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">{{ module.name }}</p>
+                    <p class="subtitle is-6 fix-height">
+                      {{ module.tagline }}
+                    </p>
+                  </div>
+                </div>
+                <div class="content">
+                  <p class="has-text-weight-bold">
+                    <nuxt-link :to="'/dashboard/application/' + module.id">
+                      Read More
+                      <span class="icon">
+                        <i class="fa fa-arrow-right"></i>
+                      </span>
+                    </nuxt-link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -86,32 +120,35 @@ export default {
   data() {
     return {
       application: {},
+      activatedApisNames: [],
+      activatedApis: [],
+      modules: [],
       isEmpty: true,
       isHoverable: true,
       isLoading: true,
       hasMobileCards: true,
-      activatedApisNames: [],
-      activatedApis: [],
       show: false
     }
   },
-  asyncData(context) {
-    return context.app.$repository.application
-      .show(context.params.app_slug)
-      .then((response) => {
-        console.log(response)
-        return {
-          application: response,
-          activatedApisNames: response.active_apis
-        }
-      })
-      .catch((e) => {
-        context.error({ statusCode: 404, message: 'Application not found' })
-      })
+  async asyncData(context) {
+    try {
+      const appResponse = await context.app.$repository.application.show(
+        context.params.app_slug
+      )
+      const moduleResponse = await context.app.$repository.module.index()
+      console.log(appResponse)
+      console.log(moduleResponse.data.modules)
+      return {
+        application: appResponse,
+        modules: moduleResponse.data.modules
+      }
+    } catch (e) {
+      context.error({ statusCode: 404, message: 'Application not found' })
+    }
   },
   created() {
     this.isLoading = false
-    this.reloadApis()
+    // this.reloadApis()
   },
   methods: {
     reloadApis() {

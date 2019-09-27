@@ -1,5 +1,7 @@
 <template>
-  <section class="section section-border-bottom has-text-centered-mobile">
+  <section
+    class="section has-background-light section-border-bottom has-text-centered-mobile"
+  >
     <div class="container">
       <h1 class="title">{{ title }}</h1>
       <p class="is-6 has-text-weight-light">
