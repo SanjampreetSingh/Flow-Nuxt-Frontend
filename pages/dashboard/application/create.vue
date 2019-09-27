@@ -2,58 +2,60 @@
 <template>
   <div>
     <section-header title="Create New Application" />
-    <div class="section columns">
-      <div class="column is-3">
-        <p>App Details</p>
-      </div>
-      <div class="column">
-        <b-message v-if="formStatus" type="is-success">
-          {{ formStatus }}
-        </b-message>
-        <form @submit.prevent="validate">
-          <client-only>
-            <b-field
-              label="Application Name"
-              :type="{ 'is-danger': errors.has('name') }"
-              :message="errors.first('name')"
-            >
-              <input
-                id="name"
-                v-model="application.name"
-                v-validate="{ required: true, min: 3, max: 50 }"
-                type="text"
-                name="name"
-                class="input"
-                placeholder="Application Name"
-                aria-placeholder="Application Name"
-              />
-            </b-field>
-          </client-only>
-          <div class="columns is-vcentered">
-            <div class="column is-8">
-              <input
-                id="slug"
-                v-model="slug"
-                type="text"
-                name="slug"
-                class="input"
-                placeholder="Application Slug"
-                aria-placeholder="Application Slug"
-                disabled
-              />
-            </div>
-            <div class="column">
-              <btn
-                type="submit"
-                color="is-dark"
-                :loading="loader"
-                :disabled="disabled"
+    <div class="container">
+      <div class="section columns">
+        <div class="column is-3">
+          <p>App Details</p>
+        </div>
+        <div class="column">
+          <b-message v-if="formStatus" type="is-success">
+            {{ formStatus }}
+          </b-message>
+          <form @submit.prevent="validate">
+            <client-only>
+              <b-field
+                label="Application Name"
+                :type="{ 'is-danger': errors.has('name') }"
+                :message="errors.first('name')"
               >
-                <span>Create</span>
-              </btn>
+                <input
+                  id="name"
+                  v-model="application.name"
+                  v-validate="{ required: true, min: 3, max: 50 }"
+                  type="text"
+                  name="name"
+                  class="input"
+                  placeholder="Application Name"
+                  aria-placeholder="Application Name"
+                />
+              </b-field>
+            </client-only>
+            <div class="columns is-vcentered">
+              <div class="column is-8">
+                <input
+                  id="slug"
+                  v-model="slug"
+                  type="text"
+                  name="slug"
+                  class="input"
+                  placeholder="Application Slug"
+                  aria-placeholder="Application Slug"
+                  disabled
+                />
+              </div>
+              <div class="column">
+                <btn
+                  type="submit"
+                  color="is-dark"
+                  :loading="loader"
+                  :disabled="disabled"
+                >
+                  <span>Create</span>
+                </btn>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>

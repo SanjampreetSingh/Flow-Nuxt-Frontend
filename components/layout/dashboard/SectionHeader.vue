@@ -1,14 +1,16 @@
 <template>
   <section class="section section-border-bottom has-text-centered-mobile">
-    <h1 class="title">{{ title }}</h1>
-    <p class="is-6 has-text-weight-light">
-      <nuxt-link to="/dashboard/">
-        <span class="icon">
-          <i class="fa fa-arrow-left"></i>
-        </span>
-        Back to Dashboard
-      </nuxt-link>
-    </p>
+    <div class="container">
+      <h1 class="title">{{ title }}</h1>
+      <p class="is-6 has-text-weight-light">
+        <nuxt-link to="/dashboard/">
+          <span class="icon">
+            <i class="fa fa-arrow-left"></i>
+          </span>
+          Back to Dashboard
+        </nuxt-link>
+      </p>
+    </div>
   </section>
 </template>
 <script>
