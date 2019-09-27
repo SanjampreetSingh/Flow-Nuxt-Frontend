@@ -6,5 +6,5 @@ export default (ctx, inject) => {
   const repositories = {
     application: repositoryWithAxios('user/app')
   }
-  inject('repositories', repositories)
+  inject('repository', repositories)
 }

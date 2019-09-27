@@ -101,7 +101,7 @@ export default {
     async submit() {
       const vm = this
       try {
-        await this.$repositories.application.create({
+        await this.$repository.application.create({
           user: vm.loggedInUser.id,
           name: vm.application.name,
           reference_url: vm.loggedInUser.id + '-' + vm.slug

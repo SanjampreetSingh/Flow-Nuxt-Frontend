@@ -37,7 +37,7 @@ export default {
     { src:'~/plugins/buefy', ssr: false },
     { src:'~/plugins/auth', ssr: false },
     { src:'~/plugins/common', ssr: false },
-    { src:'~/plugins/repository', ssr: false }
+    { src:'~/plugins/repository' }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -55,7 +55,8 @@ export default {
     '@nuxtjs/auth',
     '@nuxtjs/pwa',
     'nuxt-svg-loader',
-    'nuxt-validate'
+    'nuxt-validate',
+    'nuxt-clipboard2'
   ],
   /*
    ** Axios module configuration
