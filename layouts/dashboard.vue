@@ -11,9 +11,7 @@
       </div>
     </div>
     <nav-bar />
-    <div class="container">
-      <nuxt />
-    </div>
+    <nuxt />
   </div>
 </template>
 <script>
