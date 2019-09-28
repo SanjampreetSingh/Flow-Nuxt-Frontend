@@ -56,8 +56,13 @@ export default {
     '@nuxtjs/pwa',
     'nuxt-svg-loader',
     'nuxt-validate',
-    'nuxt-clipboard2'
+    'nuxt-clipboard2',
+    '@nuxtjs/recaptcha'
   ],
+  recaptcha: {
+    siteKey: '6LdH4boUAAAAANtgc1_mFvw5wW-IKAQ6Yj9DFYSg',    // Site key for requests
+    version: 2     // Version
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
