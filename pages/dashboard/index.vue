@@ -17,7 +17,10 @@
           </div>
           <div class="level-right">
             <div class="level-item">
-              <nuxt-link to="application/create" append class="button is-black">
+              <nuxt-link
+                to="/dashboard/application/create"
+                class="button is-black"
+              >
                 <span class="icon">
                   <i class="fa fa-plus"></i>
                 </span>
@@ -30,9 +33,30 @@
     </section>
     <div class="container">
       <section class="section">
+        <h1 class="title is-3">Your Applications</h1>
         <div class="columns has-text-centered is-multiline">
+          <div v-if="!applications.length" class="column is-3">
+            <div class="card">
+              <div class="card-image card-img-block">
+                <i class="fa fa-plus fa-5x"></i>
+              </div>
+              <div class="card-content">
+                <div class="media align-title">
+                  <div class="media-content has-text-centered">
+                    <nuxt-link
+                      to="/dashboard/application/create"
+                      class="title is-5"
+                    >
+                      Create Application
+                    </nuxt-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div
             v-for="application in applications"
+            v-else
             :key="application.id"
             class="column is-3"
           >
