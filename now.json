@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "nuxt.config.js",
+        "use": "@nuxtjs/now-builder",
+        "config": {}
+      }
+    ],
+    "routes": [
+      {
+        "src": "/_nuxt",
+        "dest": "/404.html",
+        "status": 404
+      },
+      {
+        "src": "/_nuxt/img/",
+        "dest": "/404.html",
+        "status": 404
+      }
+    ]
+  }
