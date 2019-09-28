@@ -12,17 +12,17 @@
             :mobile-cards="hasMobileCards"
           >
             <template slot-scope="props">
-              <b-table-column field="id" label="ID" width="40" numeric>
+              <!-- <b-table-column field="id" label="ID" width="40" numeric>
                 {{ props.row.id }}
-              </b-table-column>
+              </b-table-column> -->
               <b-table-column field="name" label="Name">
-                {{ props.row.name }}
+                {{ props.row }}
               </b-table-column>
-              <b-table-column field="active" label="Deactivate">
+              <!-- <b-table-column field="active" label="Deactivate">
                 <a class="tag is-danger" @click="activate(props.row.id)">
                   Deactive
                 </a>
-              </b-table-column>
+              </b-table-column> -->
               <b-table-column field="actions" label="Actions">
                 <nuxt-link to="/dashboard/demo">Demo</nuxt-link>
               </b-table-column>
@@ -111,9 +111,10 @@ export default {
         context.app.$repository.application.show(context.params.app_slug),
         context.app.$repository.module.index()
       ])
+      console.log(appResponse)
       return {
         application: appResponse,
-        activatedApisNames: appResponse.ready_apis,
+        activatedApis: appResponse.ready_apis,
         modules: modulesResponse.data.modules
       }
     } catch (e) {

@@ -97,17 +97,30 @@ export default {
     async activate(apiId) {
       this.loader = true
       this.disabled = true
-      await this.$axios
-        .$post('/user/ready/app/activate', {
-          api_id: apiId,
-          app_reference_url: this.$route.params.app_slug
-        })
-        .then((response) => {
-          this.loader = false
-          this.disabled = false
-          this.showMsg('Model activated to you Application.', 'is-info')
-        })
+      try {
+        await this.$axios
+          .$post('/user/ready/app/activate', {
+            api_id: apiId,
+            app_reference_url: this.$route.params.app_slug
+          })
+          .then((response) => {
+            this.showMsg('Model activated to you Application.', 'is-info')
+          })
+      } catch (e) {
+        this.showMsg('Model already activated', 'is-danger')
+      } finally {
+        this.loader = false
+        this.disabled = false
+      }
     }
   }
 }
 </script>
+<style scoped>
+.card-footer {
+  border-top: unset;
+}
+.card-footer-item:not(:last-child) {
+  border-right: none;
+}
+</style>
