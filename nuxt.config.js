@@ -60,6 +60,7 @@ export default {
     '@nuxtjs/recaptcha'
   ],
   recaptcha: {
+    language: 'en',   // Recaptcha language (v2)
     siteKey: '6LdH4boUAAAAANtgc1_mFvw5wW-IKAQ6Yj9DFYSg',    // Site key for requests
     version: 2     // Version
   },
