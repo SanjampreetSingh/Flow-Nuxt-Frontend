@@ -21,6 +21,11 @@
 import SocialLogin from '~/components/layout/default/SocialLogin'
 import EmailLogin from '~/components/layout/default/EmailLogin'
 export default {
+  head() {
+    return {
+      script: [{ src: 'https://www.google.com/recaptcha/api.js' }]
+    }
+  },
   components: {
     SocialLogin,
     EmailLogin
