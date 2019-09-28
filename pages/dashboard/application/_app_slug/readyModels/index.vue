@@ -20,15 +20,22 @@
                     </div>
                   </div>
                   <div class="card-footer">
-                    <a class="card-footer-item">
+                    <nuxt-link
+                      :to="
+                        '/dashboard/application/' +
+                          application.reference_url +
+                          '/readyModels/demo/'
+                      "
+                      class="card-footer-item"
+                    >
                       <p class="has-text-weight-bold">Demo</p>
-                    </a>
+                    </nuxt-link>
                     <!-- <a
                       class="card-footer-item has-text-weight-bold has-background-info has-text-white-bis"
                       @click="activate(model.id)"
                     >
                       Activate
-                    </a> -->
+                    </a>-->
                     <a class="card-footer-item" @click="activate(model.id)">
                       <btn
                         color="is-info"
