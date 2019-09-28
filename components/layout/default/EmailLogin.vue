@@ -7,10 +7,6 @@
       </div>
     </div>
     <form @submit.prevent="validate">
-      <div
-        class="g-recaptcha"
-        data-sitekey="6LdH4boUAAAAANtgc1_mFvw5wW-IKAQ6Yj9DFYSg"
-      ></div>
       <div class="columns is-centered">
         <div class="column is-3 pt">
           <p v-if="passwordField">
