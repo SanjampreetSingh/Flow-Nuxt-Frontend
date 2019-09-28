@@ -34,43 +34,26 @@
           <div
             v-for="application in applications"
             :key="application.id"
-            class="column is-4"
+            class="column is-3"
           >
             <nuxt-link
               :to="'/dashboard/application/' + application.reference_url"
             >
               <div class="card">
+                <div class="card-image card-img-block">
+                  <avatar :username="application.name" :size="100"></avatar>
+                </div>
                 <div class="card-content">
                   <div class="media align-title">
-                    <div class="media-left">
+                    <!-- <div class="media-left">
                       <figure class="image is-48x48">
                         <avatar :username="application.name"></avatar>
                       </figure>
-                    </div>
+                    </div> -->
                     <div class="media-content">
-                      <p class="title is-4">
+                      <p class="title is-5 has-text-centered">
                         {{ application.name | capitalize }}
                       </p>
-                    </div>
-                  </div>
-                  <div class="content has-text-left">
-                    <p class="has-text-weight-bold">Activated Apis</p>
-                    <ul
-                      v-if="application.active_apis != null"
-                      class="active-list"
-                    >
-                      <li
-                        v-for="api in application.active_apis.slice(0, 3)"
-                        :key="api"
-                      >
-                        {{ api }}
-                      </li>
-                    </ul>
-                    <div v-else class="content has-text-grey has-text-centered">
-                      <p>
-                        <i class="far fa-3x fa-frown-open"></i>
-                      </p>
-                      <p>Nothing here.</p>
                     </div>
                   </div>
                 </div>
@@ -138,10 +121,17 @@ a:hover {
   content: '\f00c';
   color: #d6d6d6;
 }
-.card-content {
+/* .card-content {
   height: 250px;
-}
+} */
 #module-image {
   margin-bottom: 15px;
+}
+.card-img-block {
+  padding: 50px;
+  background: #f5f5f5;
+}
+.vue-avatar--wrapper {
+  margin: 0 auto;
 }
 </style>

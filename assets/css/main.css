@@ -12,10 +12,6 @@
 a{
   color: #0070F3;   
 }
-a:hover{
-  text-decoration: underline;
-  color: #0070F3; 
-}
 .input:active, .input:focus, .is-active.input, .is-active.textarea, .is-focused.input, .is-focused.textarea{
   box-shadow:unset;
   border-color: #000; 

@@ -1,34 +1,6 @@
 <template>
   <div>
-    <section
-      v-if="application.id != null"
-      class="section has-background-light section-border-bottom"
-    >
-      <div class="container">
-        <div class="columns">
-          <div class="column is-1 is-hidden-mobile">
-            <avatar :username="application.name" :size="100" />
-          </div>
-          <div id="title-col" class="column has-text-centered-mobile">
-            <h1 id="title" class="title is-1 is-black">
-              {{ application.name | capitalize }}
-            </h1>
-            <p id="sub-title" class="subtitle has-text-weight-bold is-6">
-              API KEY
-              <span class="has-text-weight-normal">
-                <span>/</span>
-                <a v-if="!show" @click="toggle">
-                  <strong>SHOW</strong>
-                </a>
-                <a v-else @click="copyToClipboard">
-                  {{ application.apikey_value }}
-                </a>
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <app-header :application="application" />
     <section class="section">
       <div class="container">
         <h1 class="title is-3">Your Models</h1>
@@ -47,7 +19,7 @@
                 {{ props.row.name }}
               </b-table-column>
               <b-table-column field="active" label="Deactivate">
-                <a class="tag is-danger" @click="action('R', props.row.id)">
+                <a class="tag is-danger" @click="activate(props.row.id)">
                   Deactive
                 </a>
               </b-table-column>
@@ -75,6 +47,9 @@
         <div v-if="modules.length > 0" class="columns">
           <div v-for="module in modules" :key="module.id" class="column is-4">
             <div class="card">
+              <div class="card-image card-img-block has-text-centered">
+                <i class="fa fa-5x fa-plus"></i>
+              </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-content">
@@ -85,13 +60,19 @@
                   </div>
                 </div>
                 <div class="content">
-                  <p class="has-text-weight-bold">
-                    <nuxt-link :to="'/dashboard/application/' + module.id">
-                      Read More
+                  <nuxt-link
+                    v-if="module.active"
+                    :to="application.reference_url + '/readyModels/'"
+                  >
+                    <p class="has-text-weight-bold">
+                      Add Model
                       <span class="icon">
                         <i class="fa fa-arrow-right"></i>
                       </span>
-                    </nuxt-link>
+                    </p>
+                  </nuxt-link>
+                  <p v-else class="has-text-weight-bold">
+                    Coming Soon
                   </p>
                 </div>
               </div>
@@ -103,44 +84,37 @@
   </div>
 </template>
 <script>
-import Avatar from 'vue-avatar'
+import AppHeader from '~/components/layout/dashboard/AppHeader'
 export default {
   middleware: 'auth',
   layout: 'dashboard',
   components: {
-    Avatar
-  },
-  filters: {
-    capitalize(value) {
-      if (!value) return ''
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
-    }
+    AppHeader
   },
   data() {
     return {
       application: {},
-      activatedApisNames: [],
-      activatedApis: [],
-      modules: [],
       isEmpty: true,
       isHoverable: true,
       isLoading: true,
       hasMobileCards: true,
-      show: false
+      activatedApisNames: [],
+      activatedApis: [],
+      modules: [],
+      moduleChange: false,
+      models: []
     }
   },
   async asyncData(context) {
     try {
-      const appResponse = await context.app.$repository.application.show(
-        context.params.app_slug
-      )
-      const moduleResponse = await context.app.$repository.module.index()
-      console.log(appResponse)
-      console.log(moduleResponse.data.modules)
+      const [appResponse, modulesResponse] = await Promise.all([
+        context.app.$repository.application.show(context.params.app_slug),
+        context.app.$repository.module.index()
+      ])
       return {
         application: appResponse,
-        modules: moduleResponse.data.modules
+        activatedApisNames: appResponse.ready_apis,
+        modules: modulesResponse.data.modules
       }
     } catch (e) {
       context.error({ statusCode: 404, message: 'Application not found' })
@@ -148,49 +122,37 @@ export default {
   },
   created() {
     this.isLoading = false
+    this.isEmpty = false
     // this.reloadApis()
   },
   methods: {
     reloadApis() {
       if (this.activatedApisNames != null) {
-        this.activatedApis = this.apis.filter(({ name }) =>
+        this.activatedApis = this.models.filter(({ name }) =>
           this.activatedApisNames.includes(name)
         )
-        this.apis = this.apis.filter(
+        this.models = this.models.filter(
           ({ name }) => !this.activatedApisNames.includes(name)
         )
       }
     },
-    toggle() {
-      this.show = !this.show
-    },
-    async copyToClipboard() {
+    async fetchModels(referenceUrl) {
       try {
-        await this.$copyText(this.application.apikey_value)
-        this.showMsg('Copied to clipboard.', 'is-info')
+        const moduleResponse = await this.$axios.get(referenceUrl + '/api')
+        this.moduleChange = !this.moduleChange
+        console.log(moduleResponse.data.data.readyApis)
+        this.models = moduleResponse.data.data.readyApis
+        this.reloadApis()
       } catch (e) {
-        console.error(e)
+        // this.$error({ statusCode: 404, message: 'Models not found' })
       }
     }
   }
 }
 </script>
 <style scoped>
-#title-col {
-  padding-left: 35px;
-}
-#title {
-  margin: 8px 0;
-}
-#sub-title {
-  margin: 0;
-}
-#sub-title strong {
-  color: #0070f3;
-}
-@media screen and (max-width: 768px) {
-  #title-col {
-    padding-left: 0;
-  }
+.card-img-block {
+  padding: 50px;
+  background: #f5f5f5;
 }
 </style>
