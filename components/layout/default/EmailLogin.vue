@@ -109,16 +109,20 @@ export default {
     },
     onCaptchaVerified(recaptchaToken) {
       if (!this.key) {
-        this.$axios
-          .post('/check/user/', { email: this.user.email })
-          .then((response) => {
-            this.key = response.data.data.key
-            this.passwordField = true
-            this.showMsg(response.data.message, 'is-info')
-          })
-          .catch((error) => {
-            console.log(error)
-          })
+        try {
+          this.$axios
+            .post('/check/user/', { email: this.user.email })
+            .then((response) => {
+              this.key = response.data.data.key
+              this.passwordField = true
+              this.showMsg(response.data.message, 'is-info')
+            })
+        } catch (e) {
+          console.log(e)
+        } finally {
+          this.loader = false
+          this.disabled = false
+        }
       } else {
         switch (this.key) {
           case 1:
@@ -132,8 +136,6 @@ export default {
         }
       }
       this.$refs.recaptcha.reset()
-      this.loader = false
-      this.disabled = false
     },
     onCaptchaExpired() {
       this.$refs.recaptcha.reset()
@@ -145,22 +147,27 @@ export default {
       this.password = ''
     },
     async register() {
+      const vm = this
       try {
         await this.$axios.post('register/', {
           email: this.user.email,
           password: this.user.password
         })
-
-        await this.$auth.loginWith('local', {
-          data: {
-            email: this.user.email,
-            password: this.user.password
-          }
-        })
-
-        this.$router.replace('/dashboard/')
+        await this.$auth
+          .loginWith('local', {
+            data: {
+              email: this.user.email,
+              password: this.user.password
+            }
+          })
+          .then((response) => {
+            vm.$router.replace('/dashboard/')
+          })
       } catch (e) {
         this.error = e.response.data.message
+      } finally {
+        this.loader = false
+        this.disabled = false
       }
     },
     async login() {
@@ -179,6 +186,9 @@ export default {
       } catch (e) {
         this.error = e.response.data.message
         this.showMsg(e.response.data.message)
+      } finally {
+        this.loader = false
+        this.disabled = false
       }
     }
   }

@@ -19,8 +19,8 @@
               <b-navbar-item>
                 <nuxt-link to="/dashboard">Profile</nuxt-link>
               </b-navbar-item>
-              <b-navbar-item>
-                <a @click="logout">Log out</a>
+              <b-navbar-item @click.native="logout">
+                <span>Log out</span>
               </b-navbar-item>
             </b-navbar-dropdown>
           </template>
