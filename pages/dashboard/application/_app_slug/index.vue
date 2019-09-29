@@ -111,7 +111,7 @@ export default {
         context.app.$repository.application.show(context.params.app_slug),
         context.app.$repository.module.index()
       ])
-      console.log(appResponse)
+      console.log(modulesResponse.data.modules.length)
       return {
         application: appResponse,
         activatedApis: appResponse.ready_apis,
@@ -122,19 +122,24 @@ export default {
     }
   },
   created() {
-    this.isLoading = false
-    this.isEmpty = false
-    // this.reloadApis()
+    this.reloadApis()
   },
   methods: {
     reloadApis() {
-      if (this.activatedApisNames != null) {
-        this.activatedApis = this.models.filter(({ name }) =>
-          this.activatedApisNames.includes(name)
-        )
-        this.models = this.models.filter(
-          ({ name }) => !this.activatedApisNames.includes(name)
-        )
+      // if (this.activatedApisNames != null) {
+      //   this.activatedApis = this.models.filter(({ name }) =>
+      //     this.activatedApisNames.includes(name)
+      //   )
+      //   this.models = this.models.filter(
+      //     ({ name }) => !this.activatedApisNames.includes(name)
+      //   )
+      // }
+      if (!this.activatedApis) {
+        this.isLoading = false
+        this.isEmpty = true
+      } else {
+        this.isLoading = false
+        this.isEmpty = false
       }
     },
     async fetchModels(referenceUrl) {
