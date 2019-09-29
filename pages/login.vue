@@ -2,7 +2,7 @@
   <section class="hero is-fullheight">
     <div class="hero-body">
       <div class="container">
-        <social-login v-if="!isEmail" />
+        <!-- <social-login v-if="!isEmail" />
         <email-login v-else />
         <div class="columns">
           <div class="column">
@@ -12,13 +12,14 @@
               <a v-else @click="toggleEmail">continue with Github or GitLab</a>
             </p>
           </div>
-        </div>
+        </div> -->
+        <email-login />
       </div>
     </div>
   </section>
 </template>
 <script>
-import SocialLogin from '~/components/layout/default/SocialLogin'
+// import SocialLogin from '~/components/layout/default/SocialLogin'
 import EmailLogin from '~/components/layout/default/EmailLogin'
 import ogImage from '~/static/icon.png'
 export default {
@@ -87,7 +88,7 @@ export default {
   },
   layout: 'public',
   components: {
-    SocialLogin,
+    // SocialLogin,
     EmailLogin
   },
   data() {
