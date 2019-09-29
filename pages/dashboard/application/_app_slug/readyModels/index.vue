@@ -106,7 +106,7 @@ export default {
       this.disabled = true
       try {
         await this.$axios
-          .$post('/user/ready/app/activate', {
+          .$post('/user/ready/app/activate/', {
             api_id: apiId,
             app_reference_url: this.$route.params.app_slug
           })

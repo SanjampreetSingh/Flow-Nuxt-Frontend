@@ -4,20 +4,31 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Flow | Machine Intelligence Platform for Developers and Researchers',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
+          name: 'description',
+          content: `Corporations ranging from small to large scales can very easily leverage the capabilities of our trained precise machine learning model interfaces in their workflow. We are also building a powerful research platform where researchers and developers can experiment and deploy their custom machine learning models for their own personal use.`
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: `flowai, theflowai, ml, ai, ai api, face detection, facial landmark, machine learning, artificial intelligence`
+      },
+      {
+        hid: 'theme-color',
+        name: 'theme-color',
+        content: `#d70784`
       }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favico.ico' },
       { rel: 'stylesheet', href:'https://unpkg.com/buefy/dist/buefy.min.css' },     
-      { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.2.0/css/all.css' }
+      { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.2.0/css/all.css' },
+      { rel: 'canonical', href: 'https://www.theflowai.com/' }
     ],
     script: [
       {
@@ -98,6 +109,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    extractCSS: true,
     extend(config, ctx) {}
   }
 }

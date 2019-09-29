@@ -1,5 +1,5 @@
 <template>
   <div>
-    <nuxt />
+    <h1>helo</h1>
   </div>
 </template>

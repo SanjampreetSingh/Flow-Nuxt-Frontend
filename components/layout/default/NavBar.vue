@@ -1,6 +1,9 @@
 <template>
   <header>
-    <nav class="navbar is-transparent navbarScroll is-fixed-top">
+    <nav
+      class="navbar is-transparent is-fixed-top"
+      :class="{ navbarScroll: navbarScroll }"
+    >
       <div class="container">
         <div class="navbar-brand">
           <nuxt-link to="/" class="navbar-item">
@@ -48,13 +51,27 @@ export default {
   },
   data() {
     return {
-      show: false
+      show: false,
+      navbarScroll: false
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll)
   },
   methods: {
     toggleShow() {
       this.show = !this.show
+    },
+    updateScroll() {
+      if (window.scrollY > 10) {
+        this.navbarScroll = true
+      } else {
+        this.navbarScroll = false
+      }
     }
+  },
+  destroy() {
+    window.removeEventListener('scroll', this.updateScroll)
   }
 }
 </script>
@@ -81,15 +98,10 @@ export default {
   width: 25%;
   height: auto;
 }
-#fix-top {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
 .navbarScroll {
-  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(8px);
+  background: hsla(0, 0%, 100%, 0.6);
+  box-shadow: 0 0 20px #a7a7a7;
 }
 .navbar {
   background: none;

@@ -76,6 +76,7 @@
 <script>
 import VueJsonPretty from 'vue-json-pretty'
 export default {
+  layout: 'public',
   components: {
     VueJsonPretty
   },
