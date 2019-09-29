@@ -211,7 +211,7 @@ export default {
     async requestModel() {
       this.inference.result = 'Loading...'
       await this.$axios
-        .$post('/ready/demo', {
+        .$post('/ready/demo/', {
           api_id: this.activeCategory.id,
           data: this.activeImage.url
         })
