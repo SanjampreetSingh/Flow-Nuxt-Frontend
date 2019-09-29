@@ -7,6 +7,14 @@
       </div>
     </div>
     <form @submit.prevent="validate">
+      <vue-recaptcha
+        ref="recaptcha"
+        size="invisible"
+        sitekey="6Ldl6boUAAAAAH_jsSRo97SQD3EyJeOSUEVhDcO8"
+        @verify="onCaptchaVerified"
+        @expired="onCaptchaExpired"
+      >
+      </vue-recaptcha>
       <div class="columns is-centered">
         <div class="column is-3 pt">
           <p v-if="passwordField">
@@ -66,9 +74,9 @@
             :loading="loader"
             :disabled="disabled"
           >
-            <span class="content" v-if="key == 1">Register</span>
-            <span class="content" v-else-if="key == 2">Login</span>
-            <span class="content" v-else>Continue</span>
+            <span v-if="key == 1" class="content">Register</span>
+            <span v-else-if="key == 2" class="content">Login</span>
+            <span v-else class="content">Continue</span>
           </btn>
         </div>
       </div>
@@ -76,11 +84,13 @@
   </div>
 </template>
 <script>
+import VueRecaptcha from 'vue-recaptcha'
 import Btn from '~/components/general/Button'
 import formMixin from '~/mixins/formMixin.js'
 export default {
   components: {
-    Btn
+    Btn,
+    VueRecaptcha
   },
   mixins: [formMixin],
   data() {
@@ -95,6 +105,9 @@ export default {
   },
   methods: {
     submit() {
+      this.$refs.recaptcha.execute()
+    },
+    onCaptchaVerified(recaptchaToken) {
       if (!this.key) {
         this.$axios
           .post('/check/user/', { email: this.user.email })
@@ -118,8 +131,12 @@ export default {
             this.resetForm()
         }
       }
+      this.$refs.recaptcha.reset()
       this.loader = false
       this.disabled = false
+    },
+    onCaptchaExpired() {
+      this.$refs.recaptcha.reset()
     },
     resetForm() {
       this.passwordField = false

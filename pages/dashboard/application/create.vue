@@ -12,6 +12,14 @@
             {{ formStatus }}
           </b-message>
           <form @submit.prevent="validate">
+            <vue-recaptcha
+              ref="recaptcha"
+              size="invisible"
+              sitekey="6Ldl6boUAAAAAH_jsSRo97SQD3EyJeOSUEVhDcO8"
+              @verify="onCaptchaVerified"
+              @expired="onCaptchaExpired"
+            >
+            </vue-recaptcha>
             <client-only>
               <b-field
                 label="Application Name"
@@ -62,6 +70,7 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
+import VueRecaptcha from 'vue-recaptcha'
 import SectionHeader from '~/components/layout/dashboard/SectionHeader'
 import Btn from '~/components/general/Button'
 import formMixin from '~/mixins/formMixin.js'
@@ -70,7 +79,8 @@ export default {
   layout: 'dashboard',
   components: {
     SectionHeader,
-    Btn
+    Btn,
+    VueRecaptcha
   },
   mixins: [formMixin],
   data() {
@@ -100,7 +110,10 @@ export default {
       slug = slug.replace(/\s+/g, '-')
       return slug
     },
-    async submit() {
+    submit() {
+      this.$refs.recaptcha.execute()
+    },
+    async onCaptchaVerified(recaptchaToken) {
       const vm = this
       try {
         await this.$repository.application.create({
@@ -112,8 +125,12 @@ export default {
       } catch (e) {
         vm.showMsg('Application already exists with this name.')
       }
+      this.$refs.recaptcha.reset()
       this.loader = false
       this.disabled = false
+    },
+    onCaptchaExpired() {
+      this.$refs.recaptcha.reset()
     }
   }
 }

@@ -18,6 +18,13 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favico.ico' },
       { rel: 'stylesheet', href:'https://unpkg.com/buefy/dist/buefy.min.css' },     
       { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.2.0/css/all.css' }
+    ],
+    script: [
+      {
+        src: 'https://www.google.com/recaptcha/api.js',
+        async: true,
+        defer: true
+      }
     ]
   },
   /*
