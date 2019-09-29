@@ -3,10 +3,10 @@
     <div class="section">
       <div class="container">
         <div class="columns">
-          <div class="column">
+          <div class="column has-text-centered-mobile">
             <logo id="foot_logo" />
           </div>
-          <div class="column">
+          <div class="column has-text-centered-mobile">
             <h3 class="title is-4">Find Us At</h3>
             <ul id="social">
               <li>
@@ -55,7 +55,7 @@
               </li>
             </ul>
           </div>
-          <div class="column">
+          <div class="column has-text-centered-mobile">
             <h3 class="title is-4">Contact Info</h3>
             <a href="mailto:flow.support@protonmail.com">
               <button
