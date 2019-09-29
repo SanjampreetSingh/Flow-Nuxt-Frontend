@@ -1,31 +1,39 @@
 <template>
   <header>
     <div class="container">
-      <client-only>
-        <b-navbar>
-          <template slot="brand">
-            <b-navbar-item tag="router-link" :to="{ path: '/' }">
+      <nav class="navbar is-transparent navbarScroll is-fixed-top">
+        <div class="container">
+          <div class="navbar-brand">
+            <nuxt-link to="/" class="navbar-item">
               <logo id="logo" />
-            </b-navbar-item>
-          </template>
-          <template slot="end">
-            <b-navbar-item>
-              <nuxt-link to="/dashboard/ready-models/demo">Demo</nuxt-link>
-            </b-navbar-item>
-            <b-navbar-item>
-              <nuxt-link to="/dashboard">Documentation</nuxt-link>
-            </b-navbar-item>
-            <b-navbar-dropdown label="Settings">
-              <b-navbar-item>
-                <nuxt-link to="/dashboard">Profile</nuxt-link>
-              </b-navbar-item>
-              <b-navbar-item @click.native="logout">
-                <span>Log out</span>
-              </b-navbar-item>
-            </b-navbar-dropdown>
-          </template>
-        </b-navbar>
-      </client-only>
+            </nuxt-link>
+            <div
+              class="navbar-burger burger"
+              :class="{ 'is-active': show }"
+              data-target="navbarExampleTransparentExample"
+              @click="toggleShow"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div
+            id="navbarExampleTransparentExample"
+            class="navbar-menu"
+            :class="{ 'is-active': show }"
+          >
+            <div class="navbar-end">
+              <!-- <a class="navbar-item">Demo</a>
+              <a class="navbar-item">Documentation</a> -->
+              <a class="navbar-item" @click="logout">
+                <i class="fas fa-sign-out-alt icon"></i>
+                <span>Logout</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
     <div id="nav-list">
       <div class="tabs container">
@@ -54,6 +62,7 @@ export default {
   data() {
     return {
       activeTab: 0,
+      show: false,
       tabs: [
         {
           name: 'Overview',
@@ -73,6 +82,9 @@ export default {
   methods: {
     async logout() {
       await this.$auth.logout()
+    },
+    toggleShow() {
+      this.show = !this.show
     }
   }
 }
@@ -81,6 +93,10 @@ export default {
 #logo {
   width: 25%;
   height: auto;
+}
+.icon {
+  margin-right: 5px;
+  margin-top: 10px;
 }
 .tabs a {
   color: #949292;

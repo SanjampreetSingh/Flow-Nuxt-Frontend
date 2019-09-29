@@ -35,17 +35,17 @@ export default {
   components: {
     Avatar
   },
-  props: {
-    application: {
-      type: Object,
-      required: true
-    }
-  },
   filters: {
     capitalize(value) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+  },
+  props: {
+    application: {
+      type: Object,
+      required: true
     }
   },
   data() {
