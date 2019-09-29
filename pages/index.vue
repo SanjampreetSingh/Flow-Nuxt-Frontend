@@ -40,11 +40,11 @@
     </section>
     <section class="section">
       <div class="container">
-        <p class="subtitle is-4 has-text-centered is-italic has-text-dark">
+        <p class="subtitle is-6 has-text-justified is-italic has-text-dark">
           Note that this machine intelligence service platform is in early
           stage. So, currently we provide users with upto 100 API calls on sign
           up. If you would like to use our services with more than 100 calls
-          please contact us at our email provided below.We would love to help
+          please contact us at our email provided below. We would love to help
           you with more calls.
         </p>
       </div>
