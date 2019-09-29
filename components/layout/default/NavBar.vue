@@ -23,7 +23,7 @@
           :class="{ 'is-active': show }"
         >
           <div class="navbar-end">
-            <a class="navbar-item">Demo</a>
+            <nuxt-link to="/demo" class="navbar-item">Demo</nuxt-link>
             <a class="navbar-item">Documentation</a>
             <div class="navbar-item">
               <nuxt-link
@@ -89,7 +89,7 @@ export default {
 }
 .navbarScroll {
   background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
 }
 .navbar {
   background: none;

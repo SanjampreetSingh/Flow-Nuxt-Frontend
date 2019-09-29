@@ -70,7 +70,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://api.theflowai.com/api'
+    baseURL: 'http://localhost:8000/api'
   },
   auth: {
     plugins: [ '~/plugins/auth.js' ],
