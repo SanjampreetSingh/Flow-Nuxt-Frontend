@@ -111,7 +111,13 @@ export default {
       return slug
     },
     submit() {
-      this.$refs.recaptcha.execute()
+      if (this.$auth.user.verified) {
+        this.$refs.recaptcha.execute()
+      } else {
+        this.showMsg('Please verify your email.')
+        this.loader = false
+        this.disabled = false
+      }
     },
     async onCaptchaVerified(recaptchaToken) {
       const vm = this

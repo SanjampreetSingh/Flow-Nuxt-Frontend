@@ -110,16 +110,18 @@ export default {
     }
   },
   asyncData(context) {
-    return context.app.$repository.application
-      .index()
-      .then((response) => {
-        return {
-          applications: response.data.application
-        }
-      })
-      .catch((e) => {
-        console.log(e)
-      })
+    if (context.$auth.user.verified) {
+      return context.app.$repository.application
+        .index()
+        .then((response) => {
+          return {
+            applications: response.data.application
+          }
+        })
+        .catch((e) => {
+          console.log(e)
+        })
+    }
   }
 }
 </script>
