@@ -164,14 +164,18 @@ export default {
       }
     },
     async login() {
+      const vm = this
       try {
-        await this.$auth.loginWith('local', {
-          data: {
-            email: this.user.email,
-            password: this.user.password
-          }
-        })
-        this.$router.replace('/dashboard/')
+        await this.$auth
+          .loginWith('local', {
+            data: {
+              email: this.user.email,
+              password: this.user.password
+            }
+          })
+          .then((response) => {
+            vm.$router.replace('/dashboard/')
+          })
       } catch (e) {
         this.error = e.response.data.message
         this.showMsg(e.response.data.message)
