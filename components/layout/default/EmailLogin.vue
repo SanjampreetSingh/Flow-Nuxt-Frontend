@@ -147,7 +147,7 @@ export default {
       this.password = ''
     },
     async register() {
-      // const vm = this
+      const vm = this
       try {
         await this.$axios.post('register/', {
           email: this.user.email,
@@ -161,8 +161,8 @@ export default {
             }
           })
           .then((response) => {
-            // vm.$router.replace('/dashboard/')
-            window.location.reload()
+            vm.$router.replace('/dashboard/')
+            // window.location.reload()
           })
       } catch (e) {
         this.error = e.response.data.message
@@ -172,7 +172,7 @@ export default {
       }
     },
     async login() {
-      // const vm = this
+      const vm = this
       try {
         await this.$auth
           .loginWith('local', {
@@ -182,8 +182,8 @@ export default {
             }
           })
           .then((response) => {
-            // vm.$router.replace('/dashboard/')
-            window.location.reload()
+            vm.$router.replace('/dashboard/')
+            // window.location.reload()
           })
       } catch (e) {
         this.error = e.response.data.message
