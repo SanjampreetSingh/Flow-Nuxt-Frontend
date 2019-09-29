@@ -91,7 +91,7 @@ export default {
 </script>
 <style>
 #logo {
-  width: 25%;
+  width: 20%;
   height: auto;
 }
 .icon {
