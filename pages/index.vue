@@ -33,6 +33,7 @@
             <img
               :src="require('~/assets/img/ReadyModels/face_detection.jpg')"
               alt="Face Detection"
+              width="65%"
             />
           </div>
         </div>
