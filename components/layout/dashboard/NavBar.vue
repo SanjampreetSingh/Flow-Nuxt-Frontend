@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="container">
-      <nav class="navbar is-transparent navbarScroll is-fixed-top">
+      <nav class="navbar is-transparent navbarScroll">
         <div class="container">
           <div class="navbar-brand">
             <nuxt-link to="/" class="navbar-item">
