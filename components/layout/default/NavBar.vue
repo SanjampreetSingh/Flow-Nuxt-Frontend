@@ -109,6 +109,9 @@ export default {
 .navbar-item img {
   max-height: 3.75rem;
 }
+.navbar-item {
+  font-weight: 500;
+}
 @media only screen and (max-width: 425px) {
   .navbar-item img {
     max-height: 2.75rem;
