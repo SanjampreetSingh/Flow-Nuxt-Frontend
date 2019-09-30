@@ -67,15 +67,15 @@ export default {
         {
           name: 'Overview',
           link: '/dashboard/'
-        },
-        {
-          name: 'Usage',
-          link: '/dashboard/usage/'
-        },
-        {
-          name: 'Settings',
-          link: '/dashboard/settings/'
         }
+        // {
+        //   name: 'Usage',
+        //   link: '/dashboard/usage/'
+        // },
+        // {
+        //   name: 'Settings',
+        //   link: '/dashboard/settings/'
+        // }
       ]
     }
   },
