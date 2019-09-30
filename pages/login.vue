@@ -86,7 +86,7 @@ export default {
       ]
     }
   },
-  layout: 'public',
+  layout: 'subPagesLayout',
   components: {
     // SocialLogin,
     EmailLogin

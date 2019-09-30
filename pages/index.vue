@@ -25,7 +25,7 @@
               started with automating face detection in your images with our
               right out-of-the-box API in just a few lines of code!
             </p>
-            <nuxt-link to="/demo" class="button is-dark is-medium">
+            <nuxt-link to="/demo" class="btn-main">
               Demo
             </nuxt-link>
           </div>

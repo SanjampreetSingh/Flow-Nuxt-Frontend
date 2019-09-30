@@ -3,10 +3,10 @@
     <div class="section">
       <div class="container">
         <div class="columns">
-          <div class="column has-text-centered-mobile">
+          <div class="column has-text-centered">
             <logo id="foot_logo" />
           </div>
-          <div class="column has-text-centered-mobile">
+          <div class="column has-text-centered">
             <h3 class="title is-4">Find Us At</h3>
             <ul id="social">
               <li>
@@ -55,17 +55,16 @@
               </li>
             </ul>
           </div>
-          <div class="column has-text-centered-mobile">
+          <div class="column has-text-centered">
             <h3 class="title is-4">Contact Info</h3>
-            <a href="mailto:flow.support@protonmail.com">
-              <button
-                id="contact-btn"
-                class="button is-dark"
-                aria-label="contact"
-              >
-                <i class="fa fa-envelope"></i>
-                Contact Us
-              </button>
+            <a
+              href="mailto:flow.support@protonmail.com"
+              id="contact-btn"
+              class="btn-main"
+              aria-label="contact"
+            >
+              <i class="fa fa-envelope"></i>
+              Contact Us
             </a>
           </div>
         </div>

@@ -27,18 +27,14 @@
         >
           <div class="navbar-end">
             <nuxt-link to="/demo" class="navbar-item">Demo</nuxt-link>
-            <a
-              href="https://docs.theflowai.com"
-              class="navbar-item"
-              target="_blank"
-            >
+            <a href="https://docs.theflowai.com" class="navbar-item">
               Documentation
             </a>
             <div class="navbar-item">
               <nuxt-link
                 to="/login"
                 exact-active-class="is-static"
-                id="login-btn"
+                class="btn-main"
               >
                 Get Started
               </nuxt-link>
@@ -82,24 +78,6 @@ export default {
 }
 </script>
 <style scoped>
-#login-btn {
-  background: #000;
-  padding: 10px 15px;
-  border-radius: 5px;
-  color: #fff;
-  transition: 0.4s;
-}
-#login-btn:hover {
-  background: #fff;
-  color: #000;
-  border: 1px solid #000;
-}
-#login-btn.is-static {
-  background: #fff;
-  color: #000;
-  border: 1px solid #000;
-  box-shadow: none;
-}
 #logo {
   width: 25%;
   height: auto;

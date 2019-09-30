@@ -76,7 +76,7 @@
 <script>
 import VueJsonPretty from 'vue-json-pretty'
 export default {
-  layout: 'public',
+  layout: 'subPagesLayout',
   components: {
     VueJsonPretty
   },
@@ -286,6 +286,8 @@ export default {
   width: 50px;
   height: 50px;
   opacity: 0.5;
+  margin-left: 5px;
+  border-radius: 10px;
 }
 #img-list .active img {
   opacity: 1;
