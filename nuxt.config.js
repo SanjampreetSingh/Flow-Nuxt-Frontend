@@ -21,7 +21,7 @@ export default {
       {
         hid: 'theme-color',
         name: 'theme-color',
-        content: `#000`
+        content: `#2d2d2d`
       },
       {
         name:'robots',
@@ -116,14 +116,14 @@ export default {
     strategies: {
         local: {
             endpoints: {
-                login: { url: 'authenticate/', method: 'post', propertyName: 'data.token' },
-                user: { url: 'user-details', method: 'get', propertyName: 'data.user' },
-                logout: false
+              login: { url: 'authenticate/', method: 'post', propertyName: 'data.token' },
+              user: { url: 'user-details', method: 'get', propertyName: 'data.user' },
+              logout: false
             }
         },
         github: {
-            client_id: 'e25d91836a3e77079400',
-            client_secret: 'c033f10268125ab62046b0cf8aface986ac64984',
+          client_id: 'e25d91836a3e77079400',
+          client_secret: 'c033f10268125ab62046b0cf8aface986ac64984',
         }
     }
   },
