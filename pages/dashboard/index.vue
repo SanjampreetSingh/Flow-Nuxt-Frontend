@@ -6,12 +6,15 @@
           <div class="level-left">
             <div class="level-iten">
               <h1 class="title is-1 is-black">User</h1>
-              <p class="subtitle has-text-weight-bold is-6">
+              <!-- <p class="subtitle has-text-weight-bold is-6">
                 Profile
                 <span class="has-text-weight-normal">
                   <span class="has-text-grey-light">/</span>
                   <a>Edit</a>
                 </span>
+              </p> -->
+              <p class="subtitle has-text-weight-bold is-6">
+                {{ loggedInUser.email }}
               </p>
             </div>
           </div>
@@ -90,6 +93,7 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import Avatar from 'vue-avatar'
 export default {
   middleware: 'auth',
@@ -108,6 +112,9 @@ export default {
     return {
       applications: []
     }
+  },
+  computed: {
+    ...mapGetters(['loggedInUser'])
   },
   asyncData(context) {
     if (context.$auth.user.verified) {
