@@ -22,6 +22,10 @@ export default {
         hid: 'theme-color',
         name: 'theme-color',
         content: `#000`
+      },
+      {
+        name:'robots',
+        content:'INDEX,FOLLOW'
       }
     ],
     link: [
@@ -55,7 +59,8 @@ export default {
     { src:'~/plugins/buefy', ssr: false },
     { src:'~/plugins/auth', ssr: false },
     { src:'~/plugins/common', ssr: false },
-    { src:'~/plugins/repository' }
+    { src:'~/plugins/repository' },
+    { src: '~/plugins/ga.js', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -71,11 +76,31 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/auth',
-    '@nuxtjs/pwa',
     'nuxt-svg-loader',
     'nuxt-validate',
-    'nuxt-clipboard2'
+    'nuxt-clipboard2',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap'
   ],
+  robots: [
+    {
+      UserAgent: '*',
+      Disallow: ['/dashboard', '_nuxt']
+    }
+  ],
+  sitemap: {
+    hostname: 'https://theflowai.com',
+    gzip: true,
+    exclude: [
+      '/dashboard',
+      '/_nuxt'
+    ],
+    routes: [
+      '/login',
+      '/demo',
+      '/'
+    ]
+  },
     /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

@@ -28,7 +28,7 @@
           <div class="navbar-end">
             <nuxt-link to="/demo" class="navbar-item">Demo</nuxt-link>
             <a
-              href="https://api-flow-dev.gitbook.io/flow-guide/"
+              href="https://docs.theflowai.com"
               class="navbar-item"
               target="_blank"
             >
