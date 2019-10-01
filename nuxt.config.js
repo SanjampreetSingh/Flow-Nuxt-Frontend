@@ -113,6 +113,12 @@ export default {
     redirect: {
         callback: '/callback'
     },
+    cookie: {
+      prefix: 'auth.',
+      options: {
+        maxAge: 4320
+      }
+    },
     strategies: {
         local: {
             endpoints: {
