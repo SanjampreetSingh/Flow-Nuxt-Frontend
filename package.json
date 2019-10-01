@@ -25,7 +25,6 @@
     "nuxt-validate": "^1.0.1",
     "particles.js": "^2.0.0",
     "vue-avatar": "^2.1.8",
-    "vue-json-pretty": "^1.6.2",
     "vue-recaptcha": "^1.2.0"
   },
   "devDependencies": {

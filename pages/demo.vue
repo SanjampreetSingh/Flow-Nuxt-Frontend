@@ -1,6 +1,6 @@
 <template>
-  <div id="content" class="container">
-    <section class="section">
+  <section class="section">
+    <div class="container">
       <!-- <div class="columns">
         <div class="column">
           <div class="tabs is-centered">
@@ -66,19 +66,20 @@
           </section>
         </div>
         <div id="res-col" class="column is-4 has-background-grey-lighter">
-          <vue-json-pretty :path="'res'" :data="inference"></vue-json-pretty>
+          <pre>{{ inference }}</pre>
+          <!-- <vue-json-pretty :path="'res'" :data="inference"></vue-json-pretty> -->
           <!-- <button v-if="appId">Activate Model</button> -->
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 <script>
-import VueJsonPretty from 'vue-json-pretty'
+// import VueJsonPretty from 'vue-json-pretty'
 export default {
   layout: 'subPagesLayout',
   components: {
-    VueJsonPretty
+    // VueJsonPretty
   },
   data() {
     return {
@@ -103,7 +104,7 @@ export default {
         id: ''
       },
       inference: {
-        number: '0',
+        length: 0,
         result: 'Click on image or api'
       }
     }
@@ -232,6 +233,7 @@ export default {
     },
     async requestModel() {
       this.inference.result = 'Loading...'
+      this.inference.length = 0
       await this.$axios
         .$post('/ready/demo/', {
           api_id: this.activeCategory.id,
@@ -241,7 +243,7 @@ export default {
           this.inference.result = response.data.demoData.body
           const lengthofResponse = Object.keys(response.data.demoData.body)
             .length
-          this.inference.number = `${lengthofResponse} faces found`
+          this.inference.length = lengthofResponse
           this.faceDetectionBoxes(response.data.demoData.body)
         })
     },

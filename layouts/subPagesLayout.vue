@@ -2,17 +2,17 @@
   <div>
     <nav-bar />
     <nuxt />
-    <copyright-strip />
+    <!-- <copyright-strip /> -->
   </div>
 </template>
 <script>
-import NavBar from '~/components/layout/default/NavBar'
-import CopyrightStrip from '~/components/layout/default/CopyrightStrip'
+import NavBar from '~/components/layout/subPages/NavBar'
+// import CopyrightStrip from '~/components/layout/default/CopyrightStrip'
 export default {
   middleware: 'guest',
   components: {
-    NavBar,
-    CopyrightStrip
+    NavBar
+    // CopyrightStrip
   }
 }
 </script>
