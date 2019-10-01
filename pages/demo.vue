@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section id="content" class="section">
     <div class="container">
       <!-- <div class="columns">
         <div class="column">
@@ -279,7 +279,7 @@ export default {
 </script>
 <style scoped>
 #content {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 #category a {
   padding: 5px 10px;
