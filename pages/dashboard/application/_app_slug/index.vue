@@ -24,7 +24,15 @@
                 </a>
               </b-table-column> -->
               <b-table-column field="actions" label="Actions">
-                <nuxt-link to="/dashboard/demo">Demo</nuxt-link>
+                <nuxt-link
+                  :to="
+                    '/dashboard/application/' +
+                      application.reference_url +
+                      '/readyModels/demo/'
+                  "
+                >
+                  Demo
+                </nuxt-link>
               </b-table-column>
             </template>
             <template slot="empty">

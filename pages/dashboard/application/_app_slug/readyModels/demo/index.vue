@@ -45,8 +45,8 @@
             <canvas
               id="image-view"
               ref="imagecanvas"
-              :width="width"
-              :height="height"
+              :width="canvasValues.width"
+              :height="canvasValues.height"
             >
             </canvas>
           </div>
@@ -86,8 +86,14 @@ export default {
       activeTab: 0,
       tabs: [],
       categories: [],
-      width: '400',
-      height: '400',
+      canvasValues: {
+        width: '400',
+        height: '400',
+        xStart: '',
+        yStart: '',
+        xFactor: '',
+        yFactor: ''
+      },
       media: [],
       activeImage: {
         img: '',
@@ -137,7 +143,12 @@ export default {
     },
     changePic(url) {
       this.activeImage.url = url
-      this.context.clearRect(0, 0, this.width, this.height)
+      this.context.clearRect(
+        0,
+        0,
+        this.canvasValues.width,
+        this.canvasValues.height
+      )
       this.loadImage(this.activeImage.url)
       this.requestModel()
     },
@@ -153,8 +164,10 @@ export default {
     },
     handleResize() {
       // Calculate new canvas size based on window
-      this.height = this.$refs.imagecanvas_container.clientHeight * 0.8
-      this.width = this.$refs.imagecanvas_container.clientWidth * 0.8
+      this.canvasValues.height =
+        this.$refs.imagecanvas_container.clientHeight * 0.8
+      this.canvasValues.width =
+        this.$refs.imagecanvas_container.clientWidth * 0.8
       this.$nextTick(() => {
         this.loadImage(this.activeImage.img)
       })
@@ -164,36 +177,44 @@ export default {
       const vm = this
       const fitImageOn = function(canvas, imageObj) {
         const imageAspectRatio = imageObj.width / imageObj.height
-        const canvasAspectRatio = vm.width / vm.height
+        const canvasAspectRatio = vm.canvasValues.width / vm.canvasValues.height
         let renderableHeight, renderableWidth, xStart, yStart
 
         // If image's aspect ratio is less than canvas's we fit on height
         // and place the image centrally along width
         if (imageAspectRatio < canvasAspectRatio) {
-          renderableHeight = vm.height
+          renderableHeight = vm.canvasValues.height
           renderableWidth =
             imageObj.width * (renderableHeight / imageObj.height)
-          xStart = (vm.width - renderableWidth) / 2
+          xStart = (vm.canvasValues.width - renderableWidth) / 2
           yStart = 0
         }
 
         // If image's aspect ratio is greater than canvas's we fit on width
         // and place the image centrally along height
         else if (imageAspectRatio > canvasAspectRatio) {
-          renderableWidth = vm.width
+          renderableWidth = vm.canvasValues.width
           renderableHeight =
             imageObj.height * (renderableWidth / imageObj.width)
           xStart = 0
-          yStart = (vm.height - renderableHeight) / 2
+          yStart = (vm.canvasValues.height - renderableHeight) / 2
         }
 
         // Happy path - keep aspect ratio
         else {
-          renderableHeight = vm.height
-          renderableWidth = vm.width
+          renderableHeight = vm.canvasValues.height
+          renderableWidth = vm.canvasValues.width
           xStart = 0
           yStart = 0
         }
+        // Save (xstart, ystart)
+        vm.canvasValues.xStart = xStart
+        vm.canvasValues.yStart = yStart
+
+        // Save width and height change factor
+        vm.canvasValues.xFactor = renderableWidth / imageObj.width
+        vm.canvasValues.yFactor = renderableHeight / imageObj.height
+
         vm.context.drawImage(
           imageObj,
           xStart,
@@ -221,26 +242,35 @@ export default {
           const lengthofResponse = Object.keys(response.data.demoData.body)
             .length
           this.inference.number = `${lengthofResponse} faces found`
-          // this.faceDetectionBoxes(response.data.demoData.body)
+          this.faceDetectionBoxes(response.data.demoData.body)
         })
     },
     faceDetectionBoxes(boxes) {
+      // loop over each face
       const lengthofResponse = Object.keys(boxes).length
-      console.log(lengthofResponse)
-      console.log(boxes[Object.keys(boxes)[0]])
-      this.drawRect(boxes[Object.keys(boxes)[0]])
+      for (let i = 0; i < lengthofResponse; i++) this.drawRect(boxes[i])
     },
     drawRect(box) {
-      const x1 = box[0]
-      const y1 = box[1]
-      const height = box[2] - box[0]
-      const width = box[3] - box[1]
-      console.log(x1 + '' + y1 + '' + height + '' + width)
+      // new coordinates according to rendered image on canvas
+      const x1 = box[0] * this.canvasValues.xFactor
+      const x2 = box[2] * this.canvasValues.xFactor
+      const y1 = box[1] * this.canvasValues.yFactor
+      const y2 = box[3] * this.canvasValues.yFactor
+      const width = x2 - x1
+      const height = y2 - y1
+
       const vm = this
+      // Save canvas initial stage
+      vm.context.save()
       vm.context.beginPath()
-      vm.context.lineWidth = `10`
-      vm.context.rect(x1, y1, height, width)
-      vm.context.stroke()
+      // Change canvas origin
+      vm.context.translate(vm.canvasValues.xStart, vm.canvasValues.yStart)
+      // Draw Rectangle
+      vm.context.lineWidth = `3`
+      vm.context.strokeStyle = '#f6e15a'
+      vm.context.strokeRect(x1, y1, width, height)
+      // Reset canvas to previous stage
+      vm.context.restore()
     }
   }
 }
