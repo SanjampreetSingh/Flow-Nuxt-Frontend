@@ -89,7 +89,7 @@ export default {
   box-shadow: 0 0 20px #a7a7a7;
 }
 .navbar {
-  transition: 0.1s linear;
+  /* transition: 0.1s linear; */
 }
 .navbar-item img {
   max-height: 3.75rem;
