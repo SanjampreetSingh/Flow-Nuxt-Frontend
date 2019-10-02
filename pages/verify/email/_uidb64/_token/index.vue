@@ -19,15 +19,18 @@ export default {
       status: 'verifying...'
     }
   },
-  created() {
+  async asyncdata({ app }) {
     try {
-      this.$axios
+      await app.$axios
         .post('verify/email/', {
-          uidb64: this.$route.params.uidb64,
-          token: this.$route.params.token
+          uidb64: app.$route.params.uidb64,
+          token: app.$route.params.token
         })
         .then((response) => {
-          this.status = response.data.message
+          app.$router.replace('/login')
+          return {
+            status: response.data.message
+          }
         })
     } catch (e) {
       this.status = 'Verification failed'
