@@ -14,28 +14,25 @@
 <script>
 export default {
   auth: false,
+  layout: 'subPagesLayout',
   data() {
     return {
       status: 'verifying...'
     }
   },
-  async asyncdata(context) {
+  created() {
     try {
-      await context.app.$axios
+      this.$axios
         .post('verify/email/', {
-          uidb64: context.app.$route.params.uidb64,
-          token: context.app.$route.params.token
+          uidb64: this.$route.params.uidb64,
+          token: this.$route.params.token
         })
         .then((response) => {
-          context.app.$router.replace('/login')
-          return {
-            status: response.data.message
-          }
+          this.status = response.data.message
+          this.$router.replace('/login')
         })
     } catch (e) {
-      return {
-        status: 'Verification failed'
-      }
+      this.status = 'Verification failed'
     }
   }
 }
