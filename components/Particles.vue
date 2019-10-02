@@ -22,14 +22,14 @@ export default {
 </script>
 <style scoped>
 #particles-js {
-  height: 500px;
+  height: 100vh;
   width: 100%;
   position: relative;
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f9f8f8;
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   #particles-js {
     height: 350px;
   }
-}
+} */
 </style>

@@ -1,9 +1,6 @@
 <template>
   <header>
-    <nav
-      class="navbar is-transparent is-fixed-top"
-      :class="{ navbarScroll: navbarScroll }"
-    >
+    <nav class="navbar is-fixed-top" :class="{ navbarScroll: navbarScroll }">
       <div class="container">
         <div class="navbar-brand">
           <nuxt-link to="/" class="navbar-item">
@@ -26,8 +23,13 @@
           :class="{ 'is-active': show }"
         >
           <div class="navbar-end">
-            <nuxt-link to="/demo" class="navbar-item">Demo</nuxt-link>
-            <a href="https://docs.theflowai.com" class="navbar-item">
+            <nuxt-link to="/demo" class="navbar-item nav-item-spacing">
+              Demo
+            </nuxt-link>
+            <a
+              href="https://docs.theflowai.com"
+              class="navbar-item nav-item-spacing"
+            >
               Documentation
             </a>
             <div class="navbar-item">
@@ -78,6 +80,9 @@ export default {
 }
 </script>
 <style scoped>
+.burger {
+  align-self: center;
+}
 #logo {
   width: 25%;
   height: auto;
@@ -90,12 +95,18 @@ export default {
 }
 .navbar {
   /* transition: 0.1s linear; */
+  background: hsla(0, 0%, 100%, 0.6);
 }
 .navbar-item img {
   max-height: 3.75rem;
 }
 .navbar-item {
-  font-weight: 500;
+  font-weight: 700;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.nav-item-spacing {
+  padding-right: 50px;
 }
 @media only screen and (max-width: 425px) {
   .navbar-item img {
