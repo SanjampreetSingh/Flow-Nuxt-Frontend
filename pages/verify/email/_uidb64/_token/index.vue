@@ -19,15 +19,15 @@ export default {
       status: 'verifying...'
     }
   },
-  async asyncdata({ app }) {
+  async asyncdata(context) {
     try {
-      await app.$axios
+      await context.app.$axios
         .post('verify/email/', {
-          uidb64: app.$route.params.uidb64,
-          token: app.$route.params.token
+          uidb64: context.app.$route.params.uidb64,
+          token: context.app.$route.params.token
         })
         .then((response) => {
-          app.$router.replace('/login')
+          context.app.$router.replace('/login')
           return {
             status: response.data.message
           }
