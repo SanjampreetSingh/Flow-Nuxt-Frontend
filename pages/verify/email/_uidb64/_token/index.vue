@@ -14,7 +14,6 @@
 <script>
 export default {
   auth: false,
-  layout: 'subPagesLayout',
   data() {
     return {
       status: 'verifying...'
@@ -28,7 +27,7 @@ export default {
           token: this.$route.params.token
         })
         .then((response) => {
-          this.status = response.message
+          this.status = response.data.message
         })
     } catch (e) {
       this.status = 'Verification failed'
