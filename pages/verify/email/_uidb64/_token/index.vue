@@ -33,7 +33,9 @@ export default {
           }
         })
     } catch (e) {
-      this.status = 'Verification failed'
+      return {
+        status: 'Verification failed'
+      }
     }
   }
 }
