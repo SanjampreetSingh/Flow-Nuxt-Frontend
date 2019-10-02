@@ -93,10 +93,10 @@ export default {
     line-height: 60px;
   }
   #overlay {
-    bottom: 5%;
+    bottom: 15%;
   }
   #overlay-heading {
-    font-size: 44px;
+    font-size: 40px;
     line-height: 60px;
   }
 }

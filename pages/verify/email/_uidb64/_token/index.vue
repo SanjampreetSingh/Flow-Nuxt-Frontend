@@ -1,13 +1,42 @@
 <template>
   <div>
-    <h1>helo</h1>
+    <section id="content" class="section">
+      <div class="container">
+        <article class="message is-success">
+          <div class="message-body">
+            {{ status }}
+          </div>
+        </article>
+      </div>
+    </section>
   </div>
 </template>
 <script>
 export default {
+  layout: 'subPagesLayout',
+  data() {
+    return {
+      status: 'verifying...'
+    }
+  },
   created() {
-    console.log(this.$route.params.uidb64)
-    console.log(this.$route.params.token)
+    try {
+      this.$axios
+        .post('verify/email/', {
+          uidb64: this.$route.params.uidb64,
+          token: this.$route.params.token
+        })
+        .then((response) => {
+          this.status = response.message
+        })
+    } catch (e) {
+      this.status = 'Verification failed'
+    }
   }
 }
 </script>
+<style scoped>
+#content {
+  margin-top: 70px;
+}
+</style>

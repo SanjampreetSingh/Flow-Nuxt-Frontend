@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="navbar">
+    <nav class="navbar is-fixed-top">
       <div class="container">
         <div class="navbar-brand">
           <nuxt-link to="/" class="navbar-item">
