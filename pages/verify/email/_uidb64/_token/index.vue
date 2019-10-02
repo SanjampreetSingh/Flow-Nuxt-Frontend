@@ -14,7 +14,6 @@
 <script>
 export default {
   auth: false,
-  layout: 'subPagesLayout',
   data() {
     return {
       status: 'verifying...'
