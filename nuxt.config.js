@@ -1,3 +1,5 @@
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 export default {
   mode: 'universal',
   /*
@@ -141,6 +143,26 @@ export default {
      ** You can extend webpack config here
      */
     extractCSS: true,
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: true
+        }),
+       new OptimizeCssAssetsPlugin({})
+      ],
+      splitChunks: {
+       cacheGroups: {
+        styles: {
+         name: 'styles',
+         test: /\.(vue)$/,
+         chunks: 'all',
+         enforce: true
+        }
+       }
+      }
+     },
     extend(config, ctx) {}
   }
 }
