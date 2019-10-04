@@ -1,4 +1,4 @@
-const TerserPlugin = require('terser-webpack-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 export default {
   mode: 'universal',
@@ -146,11 +146,11 @@ export default {
     optimization: {
       minimize: true,
       minimizer: [
-        new TerserPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: true
-        }),
+        // new TerserPlugin({
+        //   cache: true,
+        //   parallel: true,
+        //   sourceMap: true
+        // }),
        new OptimizeCssAssetsPlugin({})
       ],
       splitChunks: {
