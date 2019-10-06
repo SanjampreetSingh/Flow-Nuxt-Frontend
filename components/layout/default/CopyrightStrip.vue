@@ -1,14 +1,15 @@
 <template>
   <footer class="has-background-dark">
     <div class="container">
-      <div class="columns">
-        <div class="column has-text-centered has-text-light">
-          <p>
-            Copyright © {{ new Date().getFullYear() }}
-            <span class="has-text-info">Flow</span> All rights reserved.
-          </p>
-        </div>
-      </div>
+      <p id="copyright-content" class="has-text-centered has-text-light">
+        Copyright © {{ new Date().getFullYear() }}
+        <span class="has-text-info">Flow</span> All rights reserved.
+      </p>
     </div>
   </footer>
 </template>
+<style scoped>
+#copyright-content {
+  padding: 25px 0;
+}
+</style>
