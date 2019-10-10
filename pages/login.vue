@@ -12,7 +12,7 @@
               <a v-else @click="toggleEmail">continue with Github or GitLab</a>
             </p>
           </div>
-        </div> -->
+        </div>-->
         <email-login />
       </div>
     </div>

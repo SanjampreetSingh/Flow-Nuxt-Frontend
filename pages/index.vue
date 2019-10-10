@@ -14,9 +14,7 @@
       <div class="container main-wrapper">
         <div class="columns">
           <div class="column is-5">
-            <h1 id="title-margin" class="title">
-              Face Detection
-            </h1>
+            <h1 id="title-margin" class="title">Face Detection</h1>
             <p class="subtitle has-text-justified">
               Detection of all the human faces altogether in images is
               beneficial in many use cases. Flow gives you the power of
@@ -25,9 +23,7 @@
               started with automating face detection in your images with our
               right out-of-the-box API in just a few lines of code!
             </p>
-            <nuxt-link to="/demo" class="button is-medium btn-main">
-              Demo
-            </nuxt-link>
+            <!-- <nuxt-link to="/demo" class="button is-medium btn-main">Demo</nuxt-link> -->
           </div>
           <div class="column has-text-centered">
             <img

@@ -22,7 +22,7 @@
           class="navbar-menu"
           :class="{ 'is-active': show }"
         >
-          <div class="navbar-end">
+          <div id="nav-list" class="navbar-end">
             <nuxt-link to="/demo" class="navbar-item nav-item-spacing">
               Demo
             </nuxt-link>
@@ -113,4 +113,58 @@ export default {
     max-height: 2.75rem;
   }
 }
+/* #nav-list a {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 11px 14px;
+  color: #000;
+  text-transform: uppercase;
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  margin: 14px 4px;
+}
+#nav-list a::before,
+a::after {
+  position: absolute;
+  content: '';
+  width: 32px;
+  height: 2px;
+  background-color: #000;
+  left: 50%;
+  margin: 0 2px;
+  top: 0;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  -webkit-transform: translateX(-50%) scaleX(0);
+  -moz-transform: translateX(-50%) scaleX(0);
+  -ms-transform: translateX(-50%) scaleX(0);
+  -o-transform: translateX(-50%) scaleX(0);
+  transform: translateX(-50%) scaleX(0);
+}
+#nav-list a:hover {
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+#nav-list a::after {
+  top: auto;
+  bottom: 0;
+}
+#nav-list a:hover::before,
+a:hover::after {
+  -webkit-transform: translateX(-50%) scaleX(1);
+  -moz-transform: translateX(-50%) scaleX(1);
+  -ms-transform: translateX(-50%) scaleX(1);
+  -o-transform: translateX(-50%) scaleX(1);
+  transform: translateX(-50%) scaleX(1);
+} */
 </style>

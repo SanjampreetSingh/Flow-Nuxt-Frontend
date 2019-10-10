@@ -1,19 +1,23 @@
-const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 export default {
   mode: 'universal',
   /*
    ** Headers of the page
    */
   head: {
-    title: 'Flow | Machine Intelligence Platform for Developers and Researchers',
+    htmlAttrs: {
+      lang: 'en'
+    },
+    title:
+      'Flow | Machine Intelligence Platform for Developers and Researchers',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
-          name: 'description',
-          content: `Corporations ranging from small to large scales can very easily leverage the capabilities of our trained precise machine learning model interfaces in their workflow. We are also building a powerful research platform where researchers and developers can experiment and deploy their custom machine learning models for their own personal use.`
+        name: 'description',
+        content: `Corporations ranging from small to large scales can very easily leverage the capabilities of our trained precise machine learning model interfaces in their workflow. We are also building a powerful research platform where researchers and developers can experiment and deploy their custom machine learning models for their own personal use.`
       },
       {
         hid: 'keywords',
@@ -26,14 +30,17 @@ export default {
         content: `#2d2d2d`
       },
       {
-        name:'robots',
-        content:'INDEX,FOLLOW'
+        name: 'robots',
+        content: 'INDEX,FOLLOW'
       }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favico.ico' },
-      { rel: 'stylesheet', href:'https://unpkg.com/buefy/dist/buefy.min.css' },     
-      { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.2.0/css/all.css' },
+      { rel: 'stylesheet', href: 'https://unpkg.com/buefy/dist/buefy.min.css' },
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
+      },
       { rel: 'canonical', href: 'https://www.theflowai.com/' }
     ],
     script: [
@@ -51,17 +58,15 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    '~/assets/css/main'
-  ],
+  css: ['~/assets/css/main'],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
-    { src:'~/plugins/buefy', ssr: false },
-    { src:'~/plugins/auth', ssr: false },
-    { src:'~/plugins/common', ssr: false },
-    { src:'~/plugins/repository' },
+    { src: '~/plugins/buefy', ssr: false },
+    { src: '~/plugins/auth', ssr: false },
+    { src: '~/plugins/common', ssr: false },
+    { src: '~/plugins/repository' },
     { src: '~/plugins/ga.js', ssr: false }
   ],
   /*
@@ -93,46 +98,48 @@ export default {
   sitemap: {
     hostname: 'https://theflowai.com',
     gzip: true,
-    exclude: [
-      '/dashboard',
-      '/_nuxt'
-    ],
-    routes: [
-      '/login',
-      '/demo',
-      '/'
-    ]
+    exclude: ['/dashboard', '/_nuxt'],
+    routes: ['/login', '/demo', '/']
   },
-    /*
+  /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://api.theflowai.com/api'
+    baseURL: 'http://api.theflowai.com/api'
   },
   auth: {
-    plugins: [ '~/plugins/auth.js' ],
+    // plugins: ['~/plugins/auth.js'],
     redirect: {
-        callback: '/callback'
+      callback: '/callback/',
+      login: '/login'
     },
     cookie: {
       prefix: 'auth.',
       options: {
-        maxAge: 4320
+        maxAge: 43200
       }
     },
     strategies: {
-        local: {
-            endpoints: {
-              login: { url: 'authenticate/', method: 'post', propertyName: 'data.token' },
-              user: { url: 'user-details', method: 'get', propertyName: 'data.user' },
-              logout: false
-            }
-        },
-        github: {
-          client_id: 'e25d91836a3e77079400',
-          client_secret: 'c033f10268125ab62046b0cf8aface986ac64984',
+      local: {
+        endpoints: {
+          login: {
+            url: 'authenticate/',
+            method: 'post',
+            propertyName: 'data.token'
+          },
+          user: {
+            url: 'user-details',
+            method: 'get',
+            propertyName: 'data.user'
+          },
+          logout: false
         }
+      },
+      github: {
+        client_id: 'e25d91836a3e77079400',
+        client_secret: 'c033f10268125ab62046b0cf8aface986ac64984'
+      }
     }
   },
   /*
@@ -146,24 +153,28 @@ export default {
     optimization: {
       minimize: true,
       minimizer: [
-        new TerserPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: true
-        }),
-       new OptimizeCssAssetsPlugin({})
+        // new TerserPlugin({
+        //   cache: true,
+        //   parallel: true,
+        //   sourceMap: true
+        // }),
+        new OptimizeCssAssetsPlugin({})
       ],
       splitChunks: {
-       cacheGroups: {
-        styles: {
-         name: 'styles',
-         test: /\.(vue)$/,
-         chunks: 'all',
-         enforce: true
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
         }
-       }
       }
-     },
-    extend(config, ctx) {}
+    },
+    extend(config, ctx) {
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
+    }
   }
 }
