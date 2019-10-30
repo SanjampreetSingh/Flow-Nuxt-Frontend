@@ -36,7 +36,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favico.ico' },
-      { rel: 'stylesheet', href: 'https://unpkg.com/buefy/dist/buefy.min.css' },
       {
         rel: 'stylesheet',
         href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
@@ -66,6 +65,7 @@ export default {
     { src: '~/plugins/buefy', ssr: false },
     { src: '~/plugins/auth', ssr: false },
     { src: '~/plugins/common', ssr: false },
+    { src: '~/plugins/VueCodeHighlight', ssr: false },
     { src: '~/plugins/repository' },
     { src: '~/plugins/ga.js', ssr: false }
   ],

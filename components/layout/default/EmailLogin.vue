@@ -3,7 +3,9 @@
   <div>
     <div class="columns is-centered">
       <div class="column is-6">
-        <h1 class="title is-1 has-text-centered">Get Started with Flow</h1>
+        <h1 class="title is-1 has-text-centered primary-text-color">
+          Get Started with Flow
+        </h1>
       </div>
     </div>
     <form @submit.prevent="validate">

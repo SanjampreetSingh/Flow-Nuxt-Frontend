@@ -71,7 +71,7 @@
   </footer>
 </template>
 <script>
-import Logo from '~/assets/img/logo_nobg.svg'
+import Logo from '~/assets/img/logo_nobg_white.svg'
 export default {
   components: {
     Logo

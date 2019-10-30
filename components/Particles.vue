@@ -22,7 +22,7 @@ export default {
 </script>
 <style scoped>
 #particles-js {
-  height: 100vh;
+  height: 70vh;
   width: 100%;
   position: relative;
   border-bottom: 1px solid #f9f8f8;

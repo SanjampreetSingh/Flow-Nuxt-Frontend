@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import 'buefy/dist/buefy.min.css'
 import { Navbar, Field, Notification, Message, Table, Collapse } from 'buefy'
 
 Vue.use(Navbar)

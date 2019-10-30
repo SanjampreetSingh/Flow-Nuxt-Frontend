@@ -90,12 +90,11 @@ export default {
 .navbarScroll {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  background: hsla(0, 0%, 100%, 0.6);
-  box-shadow: 0 0 20px #a7a7a7;
+  box-shadow: 0 0 20px rgb(41, 41, 41);
 }
 .navbar {
   /* transition: 0.1s linear; */
-  background: hsla(0, 0%, 100%, 0.6);
+  background: rgba(var(--bg-color), 0.6);
 }
 .navbar-item img {
   max-height: 3.75rem;
@@ -104,6 +103,7 @@ export default {
   font-weight: 700;
   padding-top: 20px;
   padding-bottom: 20px;
+  color: rgb(var(--text-color));
 }
 .nav-item-spacing {
   padding-right: 50px;
