@@ -6,9 +6,9 @@
           <logo id="foot-logo" />
         </div>
       </div>
-      <div class="columns is-centered">
-        <div class="column is-3">
-          <div id="icons-list" class="level">
+      <div class="columns is-mobile is-centered">
+        <div class="column is-6">
+          <div id="icons-list" class="level is-mobile">
             <div class="level-item">
               <a
                 href="https://www.twitter.com/Flow_ArtInt"

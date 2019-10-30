@@ -1,19 +1,47 @@
 <template>
   <section id="content" class="section">
-    <div class="columns">
-      <div class="column is-8">
-        <!-- Models Dropdown -->
-        <div class="columns">
-          <div class="column">
-            <div class="level">
-              <div class="level-left"></div>
-              <div class="level-right"></div>
-            </div>
+    <div class="container">
+      <!-- <div class="columns">
+        <div class="column">
+          <div class="tabs is-centered">
+            <ul id="category">
+              <li
+                v-for="(tab, index) in tabs"
+                :key="index"
+                :class="{ 'is-active': activeTab === index }"
+                @click="categoryChange(tab.id)"
+              >
+                <a>
+                  <span>{{ tab.name }}</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <!-- canvas -->
-        <div class="columns">
-          <div class="column">
+      </div> -->
+      <div class="columns">
+        <div
+          id="req-col"
+          ref="imagecanvas_container"
+          class="column is-8 has-background-dark has-text-centered is-paddingless"
+        >
+          <div class="column is-paddingless">
+            <section>
+              <div class="tabs container">
+                <ul id="nav-list">
+                  <li
+                    v-for="(tab, index) in categories"
+                    :key="index"
+                    :class="{ active: isThumbCategoryActive(tab.id) }"
+                    @click="changeCategory(tab.id)"
+                  >
+                    <a>{{ tab.name }}</a>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <div>
             <canvas
               id="image-view"
               ref="imagecanvas"
@@ -22,14 +50,27 @@
             >
             </canvas>
           </div>
+          <section>
+            <div class="tabs container">
+              <ul id="img-list">
+                <li
+                  v-for="image in media"
+                  :key="image.id"
+                  :class="{ active: isThumbImageActive(image.url) }"
+                  @click="changePic(image.url)"
+                >
+                  <img :src="image.url" :alt="image.category" />
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div id="res-col" class="column is-4 has-background-grey-lighter">
+          <pre>{{ inference }}</pre>
+          <!-- <vue-json-pretty :path="'res'" :data="inference"></vue-json-pretty> -->
+          <!-- <button v-if="appId">Activate Model</button> -->
         </div>
       </div>
-      <!-- Images -->
-      <div class="column is-4"></div>
-    </div>
-    <!-- Response -->
-    <div class="columns">
-      <div class="column"></div>
     </div>
   </section>
 </template>

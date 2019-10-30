@@ -5,7 +5,7 @@
         <div class="container">
           <h1 id="overlay-heading" class="title primary-text-color">
             Machine Intelligence Platform for
-            <br />Development and Cutting Edge Research
+            <br />Development
           </h1>
           <a class="flow-btn flow-btn-dark">Get Started</a>
           <a class="flow-btn flow-btn-outlined">
@@ -304,10 +304,10 @@ export default {
     line-height: 60px;
   }
   #overlay {
-    bottom: 15%;
+    bottom: 0%;
   }
   #overlay-heading {
-    font-size: 40px;
+    font-size: 26px;
     line-height: 60px;
   }
 }
