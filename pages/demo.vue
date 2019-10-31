@@ -243,6 +243,7 @@ export default {
         })
         .then((response) => {
           this.inference.result = response.data.demoData.body
+          // eslint-disable-next-line
           const lengthofResponse = Object.keys(response.data.demoData.body)
             .length
           this.inference.length = lengthofResponse

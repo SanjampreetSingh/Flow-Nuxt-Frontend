@@ -120,6 +120,7 @@ export default {
               this.showMsg(response.data.message, 'is-info')
             })
         } catch (e) {
+          // eslint-disable-next-line
           console.log(e)
         } finally {
           this.loader = false

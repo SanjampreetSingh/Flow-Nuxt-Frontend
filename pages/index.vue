@@ -104,7 +104,7 @@
         <div class="columns is-centered">
           <div class="column">
             <client-only>
-              <prism id="code-highlighter" language="html">
+              <prism id="code-highlighter" language="python">
                 {{ html }}
               </prism>
             </client-only>
@@ -157,6 +157,9 @@
 
 <script>
 import Particles from '~/components/Particles'
+import 'prismjs'
+import 'prismjs/themes/prism.css'
+import 'prismjs/components/prism-python'
 
 export default {
   layout: 'public',
@@ -187,6 +190,13 @@ export default {
 </script>
 
 <style>
+.select option {
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid rgb(var(--text-color));
+  transition: all 0.15s ease-in;
+}
+
 #code-highlighter {
   display: inline-block;
   padding-right: 10em;

@@ -62,6 +62,7 @@ export default {
         await this.$copyText(this.application.apikey_value)
         this.showMsg('Copied to clipboard.', 'is-info')
       } catch (e) {
+        // eslint-disable-next-line
         console.error(e)
       }
     }

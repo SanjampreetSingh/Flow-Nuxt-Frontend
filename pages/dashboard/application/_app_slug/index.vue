@@ -119,7 +119,7 @@ export default {
         context.app.$repository.application.show(context.params.app_slug),
         context.app.$repository.module.index()
       ])
-      console.log(modulesResponse.data.modules.length)
+      // console.log(modulesResponse.data.modules.length)
       return {
         application: appResponse,
         activatedApis: appResponse.ready_apis,
@@ -154,7 +154,7 @@ export default {
       try {
         const moduleResponse = await this.$axios.get(referenceUrl + '/api')
         this.moduleChange = !this.moduleChange
-        console.log(moduleResponse.data.data.readyApis)
+        // console.log(moduleResponse.data.data.readyApis)
         this.models = moduleResponse.data.data.readyApis
         this.reloadApis()
       } catch (e) {
