@@ -60,11 +60,23 @@
                 </div>
               </div>
               <div class="level-right">
-                <div
+                <div class="field">
+                  <div class="control has-icons-left">
+                    <div class="select is-medium is-dark">
+                      <select>
+                        <option selected>Python</option>
+                      </select>
+                    </div>
+                    <div class="icon is-small is-left has-text-dark">
+                      <i class="fas fa-code"></i>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div
                   class="dropdown"
                   :class="{ 'is-active': toggleLanguageDropdown }"
-                >
-                  <div class="dropdown-trigger">
+                > -->
+                <!-- <div class="dropdown-trigger">
                     <button
                       class="btn-main"
                       aria-haspopup="true"
@@ -76,15 +88,15 @@
                         <i class="fas fa-angle-down" aria-hidden="true"></i>
                       </span>
                     </button>
-                  </div>
-                  <div id="dropdown-menu" class="dropdown-menu" role="menu">
+                  </div> -->
+                <!-- <div id="dropdown-menu" class="dropdown-menu" role="menu">
                     <div class="dropdown-content">
-                      <a href="#" class="dropdown-item">
+                      <a class="dropdown-item is-active">
                         Python
                       </a>
                     </div>
-                  </div>
-                </div>
+                  </div> -->
+                <!-- </div> -->
               </div>
             </div>
           </div>
