@@ -57,7 +57,7 @@
                   v-for="image in media"
                   :key="image.id"
                   :class="{ active: isThumbImageActive(image.url) }"
-                  @click="changePic(image.url)"
+                  @click="changePic(image.url, image.id)"
                 >
                   <img :src="image.url" :alt="image.category" />
                 </li>
@@ -98,7 +98,8 @@ export default {
       },
       activeImage: {
         img: '',
-        url: ''
+        url: '',
+        id: ''
       },
       activeCategory: {
         id: ''
@@ -142,8 +143,9 @@ export default {
       })
       this.categories = apiResult.data.readyApis
     },
-    changePic(url) {
+    changePic(url, id) {
       this.activeImage.url = url
+      this.activeImage.id = id
       this.context.clearRect(
         0,
         0,
@@ -234,10 +236,11 @@ export default {
     async requestModel() {
       this.inference.result = 'Loading...'
       this.inference.length = 0
+      console.log(this.activeImage.id)
       await this.$axios
         .$post('/ready/demo/', {
           api_id: this.activeCategory.id,
-          data: this.activeImage.url
+          data: this.activeImage.id
         })
         .then((response) => {
           this.inference.result = response.data.demoData.body

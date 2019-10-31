@@ -28,6 +28,7 @@
             </nuxt-link>
             <a
               href="https://docs.theflowai.com"
+              target="_blank"
               class="navbar-item nav-item-spacing"
             >
               Documentation

@@ -7,8 +7,13 @@
             Machine Intelligence Platform for
             <br />Development
           </h1>
-          <a class="flow-btn flow-btn-dark">Get Started</a>
-          <a class="flow-btn flow-btn-outlined">
+          <nuxt-link to="/login" class="flow-btn flow-btn-dark">
+            Get Started
+          </nuxt-link>
+          <a
+            href="mailto:flow.support@protonmail.com"
+            class="flow-btn flow-btn-outlined"
+          >
             Contact
           </a>
         </div>
