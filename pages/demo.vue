@@ -243,6 +243,7 @@ export default {
           data: this.activeImage.id
         })
         .then((response) => {
+          console.log(response.data)
           this.inference.result = response.data.demoData.body
           const lengthofResponse = Object.keys(response.data.demoData.body)
             .length
