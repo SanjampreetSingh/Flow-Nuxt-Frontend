@@ -236,14 +236,12 @@ export default {
     async requestModel() {
       this.inference.result = 'Loading...'
       this.inference.length = 0
-      // console.log(this.activeImage.id)
       await this.$axios
         .$post('/ready/demo/', {
           api_id: this.activeCategory.id,
           data: this.activeImage.id
         })
         .then((response) => {
-          console.log(response.data)
           this.inference.result = response.data.demoData.body
           const lengthofResponse = Object.keys(response.data.demoData.body)
             .length
