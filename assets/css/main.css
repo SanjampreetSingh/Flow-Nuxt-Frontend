@@ -1,66 +1,77 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
 body {
-  font-family: 'Lato', sans-serif;
-  --bg-color: 255, 255, 255;
-  --text-color: 0, 0, 0;
-  --heading-size: 22px;
-  --text-size: 18px;
+    font-family: 'Lato', sans-serif;
+    --bg-color: 255, 255, 255;
+    --text-color: 0, 0, 0;
+    --heading-size: 22px;
+    --text-size: 18px;
 }
+
 ::-moz-selection {
-  /* Code for Firefox */
-  color: #000;
-  background: #f2ccff;
+    /* Code for Firefox */
+    color: #000;
+    background: #f2ccff;
 }
+
 ::selection {
-  color: #000;
-  background: #f2ccff;
+    color: #000;
+    background: #f2ccff;
 }
+
 a {
-  color: #0070f3;
+    color: #0070f3;
 }
+
 .primary-text-color {
-  color: rgb(var(--text-color));
+    color: rgb(var(--text-color));
 }
+
 .section-heading {
-  position: relative;
-  width: fit-content;
-  text-transform: uppercase;
-  color: rgb(var(--text-color));
-  margin-bottom: 25px;
+    position: relative;
+    width: fit-content;
+    text-transform: uppercase;
+    color: rgb(var(--text-color));
+    margin-bottom: 25px;
 }
+
 .section-heading h1 {
-  font-size: var(--heading-size);
-  font-weight: 400;
+    font-size: var(--heading-size);
+    font-weight: 400;
 }
+
 .section-heading span {
-  font-size: 12px;
-  font-weight: 600;
+    font-size: 12px;
+    font-weight: 600;
 }
-.section-heading::after{
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 20%;
-  bottom:-10px;
-  left: 0;
-  background: rgb(var(--text-color));
+
+.section-heading::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 20%;
+    bottom: -10px;
+    left: 0;
+    background: rgb(var(--text-color));
 }
+
 .section-content {
-  font-size: var(--text-size);
-  color: rgb(var(--text-color));
-  font-weight: 300;
-  line-height: 40px;
-  margin-bottom: 25px;
+    font-size: var(--text-size);
+    color: rgb(var(--text-color));
+    font-weight: 300;
+    line-height: 40px;
+    margin-bottom: 25px;
 }
+
 .input:active,
 .input:focus,
 .is-active.input,
 .is-active.textarea,
 .is-focused.input,
 .is-focused.textarea {
-  box-shadow: unset;
-  border-color: #000;
+    box-shadow: unset;
+    border-color: #000;
 }
+
 .navbar-link.is-active,
 .navbar-link:focus,
 .navbar-link:focus-within,
@@ -69,38 +80,79 @@ a.navbar-item.is-active,
 a.navbar-item:focus,
 a.navbar-item:focus-within,
 a.navbar-item:hover {
-  color: #000000;
+    color: #000000;
 }
+
 .section-border-bottom {
-  border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
 }
+
 .card {
-  transition: 0.3s;
-  box-shadow: 4px 4px 10px 0px #00000038;
-  -webkit-box-shadow: 4px 4px 10px 0px #00000038;
-  border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 4px 4px 10px 0px #00000038;
+    -webkit-box-shadow: 4px 4px 10px 0px #00000038;
+    border-radius: 5px;
 }
+
 .card:hover {
-  box-shadow: 13px 13px 20px 0px rgba(0, 0, 0, 0.219);
+    box-shadow: 13px 13px 20px 0px rgba(0, 0, 0, 0.219);
 }
+
 .fix-height {
-  min-height: 40px;
+    min-height: 40px;
 }
+
 .btn-main {
-  color: rgb(var(--text-color));
-  background: rgb(var(--bg-color));
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: 0.4s;
-  border: 1px solid rgb(var(--text-color));
+    color: rgb(var(--text-color));
+    background: rgb(var(--bg-color));
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.4s;
+    border: 1px solid rgb(var(--text-color));
 }
+
 .btn-main:hover {
-  color: rgb(var(--bg-color));
-  background: rgb(var(--text-color));
+    color: rgb(var(--bg-color));
+    background: rgb(var(--text-color));
 }
+
 .btn-main.is-static {
-  background: rgb(var(--text-color));
-  color: rgb(var(--bg-color));
-  border: 1px solid rgb(var(--text-color));
-  box-shadow: none;
+    background: rgb(var(--text-color));
+    color: rgb(var(--bg-color));
+    border: 1px solid rgb(var(--text-color));
+    box-shadow: none;
+}
+
+
+/* Scroll bar */
+
+
+/* total width */
+
+body::-webkit-scrollbar {
+    background-color: #fff;
+    width: 14px
+}
+
+
+/* background of the scrollbar except button or resizer */
+
+body::-webkit-scrollbar-track {
+    background-color: #fff
+}
+
+
+/* scrollbar itself */
+
+body::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 2px solid #fff;
+}
+
+
+/* set button(top and bottom of the scrollbar) */
+
+body::-webkit-scrollbar-button {
+    display: none
 }
