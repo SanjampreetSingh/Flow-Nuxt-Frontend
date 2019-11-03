@@ -200,7 +200,7 @@ export default {
 #code-highlighter {
   display: inline-block;
   padding-right: 10em;
-  padding-top: 3rem;
+  /* padding-top: 3rem; */
   border-radius: 6px;
   width: 100%;
   background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewBox="0 0 54 14"><g fill="none" fillRule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="%23FF5F56" stroke="%23E0443E" strokeWidth=".5" /><circle cx="26" cy="6" r="6" fill="%23FFBD2E" stroke="%23DEA123" strokeWidth=".5" /><circle cx="46" cy="6" r="6" fill="%2327C93F" stroke="%231AAB29" strokeWidth=".5" /></g></svg>');
@@ -232,7 +232,7 @@ export default {
   color: rgb(var(--bg-color));
 }
 .flow-btn-dark:hover {
-  background: rgb(var(--bg-color));
+  background: transparent;
   color: rgb(var(--text-color));
 }
 .flow-btn-outlined {

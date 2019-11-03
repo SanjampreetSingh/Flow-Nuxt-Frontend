@@ -83,8 +83,8 @@ export default {
 }
 .navbar-item {
   font-weight: 700;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
   color: rgb(var(--text-color));
 }
 .nav-item-spacing {
