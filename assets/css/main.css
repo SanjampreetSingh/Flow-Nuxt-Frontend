@@ -5,6 +5,12 @@ body {
     --text-color: 0, 0, 0;
     --heading-size: 22px;
     --text-size: 18px;
+    background: rgba(var(--bg-color),1);
+    transition: 0.3s;
+}
+.dark-mode {
+    --bg-color: 0,0,0;
+    --text-color: 255, 255, 255;
 }
 
 ::-moz-selection {
