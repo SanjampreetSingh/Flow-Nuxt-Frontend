@@ -103,8 +103,8 @@ export default {
   border-bottom-width: 0;
 }
 .tabs li.is-active a {
-  border-bottom-color: #000;
-  color: #000;
+  border-bottom-color: rgb(var(--text-color));
+  color: rgb(var(--text-color));
   font-weight: 500;
   border-width: 2px;
 }
@@ -132,5 +132,10 @@ export default {
 }
 .navbar-item a:hover {
   color: rgb(var(--text-color));
+}
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    background-color: rgba(var(--bg-color), 0.6);
+  }
 }
 </style>

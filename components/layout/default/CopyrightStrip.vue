@@ -56,7 +56,7 @@
         <div class="column has-text-centered">
           <p id="copyright-content">
             Copyright © {{ new Date().getFullYear() }}
-            <span class="has-text-info has-text-weight-bold">Flow</span> All
+            <span class="has-text-white has-text-weight-bold">Flow</span> All
             rights reserved.
           </p>
         </div>

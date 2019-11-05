@@ -5,12 +5,27 @@ body {
     --text-color: 0, 0, 0;
     --heading-size: 22px;
     --text-size: 18px;
-    background: rgba(var(--bg-color),1);
+    background: rgba(var(--bg-color), 1);
     transition: 0.3s;
 }
+
 .dark-mode {
-    --bg-color: 0,0,0;
+    --bg-color: 0, 0, 0;
     --text-color: 255, 255, 255;
+}
+
+.dark-mode img {
+    filter: grayscale(20%);
+}
+
+@media (prefers-dark-interface:dark) {
+    body {
+        --bg-color: 0, 0, 0;
+        --text-color: 255, 255, 255;
+    }
+    img {
+        filter: grayscale(20%);
+    }
 }
 
 ::-moz-selection {

@@ -95,4 +95,9 @@ export default {
     max-height: 2.75rem;
   }
 }
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    background-color: rgba(var(--bg-color), 0.6);
+  }
+}
 </style>

@@ -20,7 +20,7 @@
       </div>
     </particles>
     <div class="section section-strip">
-      <div class="secction-strip-background">
+      <div class="section-strip-background">
         <img
           class="section-strip-background-poster"
           :src="require('~/assets/img/ReadyModels/face_detection2.jpg')"
