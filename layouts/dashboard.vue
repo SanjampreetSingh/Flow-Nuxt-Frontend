@@ -13,17 +13,20 @@
     <nav-bar />
     <nuxt />
     <dark-mode />
+    <copyright-strip />
   </div>
 </template>
 <script>
 import { mapGetters } from 'vuex'
 import NavBar from '~/components/layout/dashboard/NavBar'
 import DarkMode from '~/components/general/DarkMode'
+import CopyrightStrip from '~/components/layout/default/CopyrightStrip'
 export default {
   middleware: 'auth',
   components: {
     NavBar,
-    DarkMode
+    DarkMode,
+    CopyrightStrip
   },
   data() {
     return {
