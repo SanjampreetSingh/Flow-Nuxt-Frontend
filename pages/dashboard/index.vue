@@ -40,9 +40,14 @@
         <div class="columns has-text-centered is-multiline">
           <div v-if="!applications.length" class="column is-3">
             <div class="card">
-              <div class="card-image card-img-block">
-                <i class="fa fa-plus fa-5x"></i>
-              </div>
+              <nuxt-link
+                to="/dashboard/application/create"
+                class="has-text-dark"
+              >
+                <div class="card-image card-img-block">
+                  <i class="fa fa-plus fa-5x"></i>
+                </div>
+              </nuxt-link>
               <div class="card-content">
                 <div class="media align-title">
                   <div class="media-content has-text-centered">

@@ -55,9 +55,15 @@
         <div v-if="modules.length > 0" class="columns">
           <div v-for="module in modules" :key="module.id" class="column is-4">
             <div class="card">
-              <div class="card-image card-img-block has-text-centered">
-                <i class="fa fa-5x fa-plus"></i>
-              </div>
+              <nuxt-link
+                v-if="module.active"
+                :to="application.reference_url + '/readyModels/'"
+                class="has-text-dark"
+              >
+                <div class="card-image card-img-block has-text-centered">
+                  <i class="fa fa-5x fa-plus"></i>
+                </div>
+              </nuxt-link>
               <div class="card-content">
                 <div class="media">
                   <div class="media-content">
