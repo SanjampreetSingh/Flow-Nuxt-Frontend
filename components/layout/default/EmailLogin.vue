@@ -19,7 +19,7 @@
       </vue-recaptcha>
       <div class="columns is-centered">
         <div class="column is-3 pt">
-          <p v-if="passwordField">
+          <p v-if="passwordField" class="primary-text-color">
             <a>
               <i
                 id="arrow-left"
@@ -28,7 +28,7 @@
               >
               </i>
             </a>
-            <strong>Email:</strong>
+            <strong class="primary-text-color">Email:</strong>
             {{ user.email }}
           </p>
           <b-field

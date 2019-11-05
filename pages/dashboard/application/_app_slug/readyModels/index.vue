@@ -5,7 +5,7 @@
       <div class="columns">
         <div class="column">
           <section class="section">
-            <h1 class="title is-3">Available Models</h1>
+            <h1 class="title primary-text-color is-3">Available Models</h1>
             <div class="columns">
               <div v-for="model in models" :key="model.id" class="column is-6">
                 <div class="card">
@@ -53,8 +53,10 @@
         </div>
         <div class="column is-4">
           <section class="section">
-            <h1 class="title is-3">{{ module.name }}</h1>
-            <p class="has-text-justified">{{ module.description }}</p>
+            <h1 class="title primary-text-color is-3">{{ module.name }}</h1>
+            <p class="has-text-justified primary-text-color">
+              {{ module.description }}
+            </p>
           </section>
         </div>
       </div>

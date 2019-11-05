@@ -12,15 +12,18 @@
     </div>
     <nav-bar />
     <nuxt />
+    <dark-mode />
   </div>
 </template>
 <script>
 import { mapGetters } from 'vuex'
 import NavBar from '~/components/layout/dashboard/NavBar'
+import DarkMode from '~/components/general/DarkMode'
 export default {
   middleware: 'auth',
   components: {
-    NavBar
+    NavBar,
+    DarkMode
   },
   data() {
     return {

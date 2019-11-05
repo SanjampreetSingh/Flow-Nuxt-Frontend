@@ -76,7 +76,7 @@ export default {
 }
 .navbar {
   /* transition: 0.1s linear; */
-  background: rgba(var(--bg-color), 0.6);
+  background: rgba(var(--bg-color), 1);
 }
 .navbar-item img {
   max-height: 3.75rem;

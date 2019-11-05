@@ -120,4 +120,17 @@ export default {
 .navbar-item a {
   color: #000;
 }
+.navbar {
+  /* transition: 0.1s linear; */
+  background: rgba(var(--bg-color), 0.6);
+}
+.navbar-item {
+  font-weight: 700;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
+  color: rgb(var(--text-color));
+}
+.navbar-item a:hover {
+  color: rgb(var(--text-color));
+}
 </style>

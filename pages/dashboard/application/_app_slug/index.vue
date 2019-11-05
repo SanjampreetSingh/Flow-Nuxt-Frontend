@@ -3,7 +3,7 @@
     <app-header :application="application" />
     <section class="section">
       <div class="container">
-        <h1 class="title is-3">Your Models</h1>
+        <h1 class="title primary-text-color is-3">Your Models</h1>
         <client-only>
           <b-table
             :data="isEmpty ? [] : activatedApis"
@@ -51,7 +51,7 @@
     </section>
     <section class="section">
       <div class="container">
-        <h1 class="title is-3">Modules</h1>
+        <h1 class="title primary-text-color is-3">Modules</h1>
         <div v-if="modules.length > 0" class="columns">
           <div v-for="module in modules" :key="module.id" class="column is-4">
             <div class="card">

@@ -4,7 +4,7 @@
     <section-header title="Create New Application" />
     <div class="container">
       <div class="section columns">
-        <div class="column is-3">
+        <div class="column primary-text-color is-3">
           <p>App Details</p>
         </div>
         <div class="column">
@@ -23,6 +23,7 @@
             <client-only>
               <b-field
                 label="Application Name"
+                class="primary-text-color"
                 :type="{ 'is-danger': errors.has('name') }"
                 :message="errors.first('name')"
               >

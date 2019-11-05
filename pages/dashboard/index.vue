@@ -36,7 +36,7 @@
     </section>
     <div class="container">
       <section class="section">
-        <h1 class="title is-3">Your Applications</h1>
+        <h1 class="title primary-text-color is-3">Your Applications</h1>
         <div class="columns has-text-centered is-multiline">
           <div v-if="!applications.length" class="column is-3">
             <div class="card">
