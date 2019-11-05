@@ -29,7 +29,7 @@ a {
 }
 
 .primary-text-color {
-    color: rgb(var(--text-color));
+    color: rgb(var(--text-color)) !important;
 }
 
 .section-heading {
