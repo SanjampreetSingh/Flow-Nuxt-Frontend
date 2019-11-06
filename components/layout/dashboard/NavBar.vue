@@ -4,7 +4,7 @@
       <nav class="navbar is-transparent navbarScroll">
         <div class="container">
           <div class="navbar-brand">
-            <nuxt-link to="/" class="navbar-item">
+            <nuxt-link to="/" class="navbar-item" aria-label="home">
               <logo id="logo" />
             </nuxt-link>
             <div

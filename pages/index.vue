@@ -64,7 +64,7 @@
                   <div class="control has-icons-left">
                     <div class="select is-medium is-dark">
                       <select>
-                        <option selected>Python</option>
+                        <option selected label="Python">Python</option>
                       </select>
                     </div>
                     <div class="icon is-small is-left has-text-dark">

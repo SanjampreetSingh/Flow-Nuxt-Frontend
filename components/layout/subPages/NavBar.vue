@@ -3,7 +3,7 @@
     <nav class="navbar is-fixed-top">
       <div class="container">
         <div class="navbar-brand">
-          <nuxt-link to="/" class="navbar-item">
+          <nuxt-link to="/" class="navbar-item" aria-label="home">
             <logo id="logo" />
           </nuxt-link>
           <div
@@ -30,7 +30,7 @@
               href="https://docs.theflowai.com"
               target="_blank"
               class="navbar-item nav-item-spacing"
-              rel="noreferrer"
+              rel="nofollow noopener"
             >
               Documentation
             </a>
