@@ -17,7 +17,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `Corporations ranging from small to large scales can very easily leverage the capabilities of our trained precise machine learning model interfaces in their workflow. We are also building a powerful research platform where researchers and developers can experiment and deploy their custom machine learning models for their own personal use.`
+        content: `Corporations ranging from small to large scales can very easily leverage the capabilities of our trained precise machine learning model interfaces in their workflow. A powerful research platform for researchers and developers.`
       },
       {
         hid: 'keywords',
@@ -30,6 +30,11 @@ export default {
         content: `#2d2d2d`
       },
       {
+        hid: 'author',
+        name: 'author',
+        content: `co-authored by Sanjampreet Singh, Karamveer Singh`
+      },
+      {
         name: 'robots',
         content: 'INDEX,FOLLOW'
       }
@@ -40,7 +45,7 @@ export default {
         rel: 'stylesheet',
         href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
       },
-      { rel: 'canonical', href: 'https://www.theflowai.com/' }
+      { rel: 'canonical', href: 'https://theflowai.com/' }
     ],
     script: [
       {
@@ -92,7 +97,7 @@ export default {
   robots: [
     {
       UserAgent: '*',
-      Disallow: ['/dashboard', '_nuxt']
+      Disallow: ['/dashboard']
     }
   ],
   sitemap: {

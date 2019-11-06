@@ -1,0 +1,14 @@
+# This is official site of Flow
+
+# TEAM
+    Senior Developer: Sanjampreet Singh
+	Contact:sanjampreet@protonmail.com 
+	From: Ludhiana, Punjab, India
+
+    Senior Developer: Karamveer Singh
+    Contact: singh_karamveer@protonmail.com,
+	From: Ludhiana, Punjab, India
+
+#SITE 
+	Language: English
+	Doctype:HTML5
