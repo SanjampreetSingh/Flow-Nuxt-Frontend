@@ -1,6 +1,7 @@
 <template>
   <section
     v-if="application.id != null"
+    id="dashboard-app-header-section"
     class="section has-background-light section-border-bottom"
   >
     <div class="container">
@@ -24,6 +25,22 @@
               </a>
             </span>
           </p>
+        </div>
+      </div>
+      <div id="nav-list" class="columns">
+        <div class="tabs container">
+          <ul>
+            <li
+              v-for="(tab, index) in tabs"
+              :key="index"
+              :class="{ 'is-active': activeTab === index }"
+              @click="activeTab = index"
+            >
+              <nuxt-link :to="tab.link">
+                <span>{{ tab.name }}</span>
+              </nuxt-link>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -50,7 +67,25 @@ export default {
   },
   data() {
     return {
-      show: false
+      show: false,
+      activeTab: 0,
+      tabs: [
+        {
+          name: 'About App',
+          link: '/dashboard/application/' + this.application.reference_url
+        },
+        {
+          name: 'App Usage',
+          link:
+            '/dashboard/application/' +
+            this.application.reference_url +
+            '/usage/'
+        }
+        // {
+        //   name: 'Settings',
+        //   link: '/dashboard/settings/'
+        // }
+      ]
     }
   },
   methods: {
@@ -81,6 +116,31 @@ export default {
 }
 #sub-title strong {
   color: #0070f3;
+}
+#dashboard-app-header-section {
+  padding-bottom: 0px;
+}
+.tabs a {
+  color: #949292;
+  border-bottom-width: 0;
+}
+.tabs li.is-active a {
+  border-bottom-color: rgb(var(--bg-color));
+  color: #000000;
+  font-weight: 500;
+  border-width: 2px;
+}
+.b-tabs .tab-content {
+  display: none;
+}
+.tabs ul {
+  border: 0;
+}
+#nav-list {
+  border-bottom: 1px solid #dbdbdb;
+}
+#nav-list.columns:last-child {
+  margin-bottom: 0px;
 }
 @media screen and (max-width: 768px) {
   #title-col {

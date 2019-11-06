@@ -39,7 +39,7 @@ export default {
   z-index: 1000;
   background: rgb(var(--text-color));
   color: rgb(var(--bg-color));
-  transition: 0.3s;
+  transition: 0.5s ease;
 }
 #dark-mode:hover {
   box-shadow: 3px 4px 6px #484646;

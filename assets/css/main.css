@@ -5,8 +5,11 @@ body {
     --text-color: 0, 0, 0;
     --heading-size: 22px;
     --text-size: 18px;
+    --duration: 0.5s;
+    --timing: ease;
+    color: var(--text-color);
     background: rgba(var(--bg-color), 1);
-    transition: 0.3s;
+    transition: 0.3s, color var(--duration) var(--timing), background-color var(--duration) var(--timing);
 }
 
 .dark-mode {
@@ -151,7 +154,7 @@ a.navbar-item:hover {
 /* total width */
 
 body::-webkit-scrollbar {
-    background-color: #fff;
+    background-color: rgb(var(--bg-color));
     width: 14px
 }
 
@@ -159,16 +162,16 @@ body::-webkit-scrollbar {
 /* background of the scrollbar except button or resizer */
 
 body::-webkit-scrollbar-track {
-    background-color: #fff
+    background-color: rgb(var(--bg-color));
 }
 
 
 /* scrollbar itself */
 
 body::-webkit-scrollbar-thumb {
-    background-color: #babac0;
+    background-color: #363636;
     border-radius: 16px;
-    border: 2px solid #fff;
+    border: 2px solid rgb(var(--bg-color));
 }
 
 
