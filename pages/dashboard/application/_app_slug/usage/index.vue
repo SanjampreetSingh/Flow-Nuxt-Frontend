@@ -6,7 +6,12 @@
         <div class="column">
           <section class="section">
             <h1 class="title primary-text-color is-3">Application Usage</h1>
-            <div class="columns"></div>
+            <p class="subtitle is-6 primary-text-color fix-height">
+              A summary of the usage of your application and API's.
+            </p>
+            <div class="columns">
+              <div class="colunm"></div>
+            </div>
           </section>
         </div>
       </div>

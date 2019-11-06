@@ -4,6 +4,9 @@
     <section class="section">
       <div class="container">
         <h1 class="title primary-text-color is-3">Your Models</h1>
+        <p class="subtitle is-6 primary-text-color fix-height">
+          A list of active API's in your application.
+        </p>
         <client-only>
           <b-table
             :data="isEmpty ? [] : activatedApis"
@@ -52,6 +55,9 @@
     <section class="section">
       <div class="container">
         <h1 class="title primary-text-color is-3">Modules</h1>
+        <p class="subtitle is-6 primary-text-color fix-height">
+          Select the modules and add them to your application.
+        </p>
         <div v-if="modules.length > 0" class="columns">
           <div v-for="module in modules" :key="module.id" class="column is-4">
             <div class="card">

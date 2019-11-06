@@ -45,7 +45,15 @@ export default {
         rel: 'stylesheet',
         href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
       },
-      { rel: 'canonical', href: 'https://theflowai.com/' }
+      { rel: 'canonical', href: 'https://theflowai.com/' },
+      {
+        rel: 'manifest',
+        href: 'https://theflowai.com/manifest.webmanifest'
+      },
+      {
+        rel: 'shortcut icon',
+        href: '/favico.ico'
+      }
     ],
     script: [
       {
@@ -100,12 +108,12 @@ export default {
       Disallow: ['/dashboard']
     }
   ],
-  sitemap: {
-    hostname: 'https://theflowai.com',
-    gzip: true,
-    exclude: ['/dashboard', '/_nuxt'],
-    routes: ['/login', '/demo', '/']
-  },
+  // sitemap: {
+  //   hostname: 'https://theflowai.com',
+  //   gzip: true,
+  //   exclude: ['/dashboard', '/_nuxt'],
+  //   routes: ['/login', '/demo', '/']
+  // },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
