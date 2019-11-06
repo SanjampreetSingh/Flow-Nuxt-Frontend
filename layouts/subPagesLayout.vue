@@ -10,7 +10,6 @@
 import NavBar from '~/components/layout/subPages/NavBar'
 import DarkMode from '~/components/general/DarkMode'
 import CopyrightStrip from '~/components/layout/default/CopyrightStrip'
-import ogImage from '~/static/icon.png'
 
 export default {
   head() {
@@ -34,7 +33,7 @@ export default {
         },
         {
           property: 'og:image',
-          content: ogImage
+          content: 'https://theflowai.com/icon.png'
         },
         {
           name: 'twitter:card',
@@ -58,7 +57,7 @@ export default {
         },
         {
           name: 'twitter:image',
-          content: 'https://theflowai.com' + ogImage
+          content: 'https://theflowai.com/icon.png'
         },
         {
           name: 'apple-mobile-web-app-capable',

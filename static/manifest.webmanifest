@@ -11,7 +11,7 @@
     "lang": "en",
     "orientation": "portrait",
     "icons": [{
-        "src": "/icon.png",
+        "src": "https://theflowai.com/icon.png",
         "type": "image/png",
         "sizes": "640x640"
     }]
