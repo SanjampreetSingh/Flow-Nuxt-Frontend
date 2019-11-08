@@ -30,7 +30,7 @@
               href="https://docs.theflowai.com"
               target="_blank"
               class="navbar-item nav-item-spacing"
-              rel="nofollow noopener"
+              rel="noreferrer nofollow noopener"
             >
               Documentation
             </a>

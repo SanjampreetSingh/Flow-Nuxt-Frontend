@@ -13,7 +13,7 @@
                 href="https://www.twitter.com/Flow_ArtInt"
                 aria-label="twitter"
                 target="_blank"
-                rel="nofollow noopener"
+                rel="noreferrer nofollow noopener"
               >
                 <i class="fab fa-twitter"></i>
                 Twitter
@@ -24,7 +24,7 @@
                 href="https://www.linkedin.com/company/flow-api"
                 aria-label="linkedin"
                 target="_blank"
-                rel="nofollow noopener"
+                rel="noreferrer nofollow noopener"
               >
                 <i class="fab fa-linkedin"></i>
                 LinkedIn
@@ -35,7 +35,7 @@
                 href="https://www.instagram.com/flow_artint/"
                 aria-label="instagram"
                 target="_blank"
-                rel="nofollow noopener"
+                rel="noreferrer nofollow noopener"
               >
                 <i class="fab fa-instagram"></i>
                 Instagram
@@ -46,7 +46,7 @@
                 href="https://www.facebook.com/flowml"
                 aria-label="facebook"
                 target="_blank"
-                rel="nofollow noopener"
+                rel="noreferrer nofollow noopener"
               >
                 <i class="fab fa-facebook"></i>
                 Facebook
