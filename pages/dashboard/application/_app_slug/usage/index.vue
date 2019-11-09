@@ -9,8 +9,32 @@
             <p class="subtitle is-6 primary-text-color fix-height">
               A summary of the usage of your application and API's.
             </p>
-            <div class="columns">
-              <div class="colunm"></div>
+            <div class="columns has-text-centered">
+              <div class="column">
+                <div class="title primary-text-color">
+                  {{ usage.bucket }} <span class="alt-text">Calls</span>
+                </div>
+                <div class="subtitle primary-text-color">
+                  Bucket
+                </div>
+              </div>
+              <!-- <div class="is-divider-vertical" data-content="OR"></div> -->
+              <div class="column">
+                <div class="title primary-text-color">
+                  {{ usage.usage }} <span class="alt-text">Calls</span>
+                </div>
+                <div class="subtitle primary-text-color">
+                  Usage
+                </div>
+              </div>
+              <div class="column">
+                <div class="title primary-text-color">
+                  {{ usage.threshold }} <span class="alt-text">Calls</span>
+                </div>
+                <div class="subtitle primary-text-color">
+                  Threshold
+                </div>
+              </div>
             </div>
           </section>
         </div>
@@ -31,6 +55,7 @@ export default {
       application: {},
       module: {},
       activatedApisNames: [],
+      usage: {},
       loader: false,
       disabled: false
     }
@@ -39,21 +64,28 @@ export default {
     try {
       const [
         appResponse,
-        modelInfoResponse,
-        readyModelApiResponse
+        modelInfoResponse
+        // appUsageResponse
       ] = await Promise.all([
         context.app.$repository.application.show(context.params.app_slug),
-        context.app.$repository.module.show('ready'),
-        context.$axios.get('/ready/api')
+        context.app.$repository.module.show('ready')
+        // context.$axios.post('/user/usage-ready-api/' + application.id)
       ])
       return {
         application: appResponse,
-        module: modelInfoResponse.data.module,
-        models: readyModelApiResponse.data.data.readyApis
+        module: modelInfoResponse.data.module
+        // usage: appUsageResponse
       }
     } catch (e) {
       context.error({ statusCode: 404, message: 'Application not found' })
     }
+  },
+  created() {
+    this.$axios
+      .get('/user/usage-ready-api/' + this.application.id)
+      .then((response) => {
+        this.usage = response.data.data.readyApiUsageBucketData
+      })
   },
   methods: {
     async activate(apiId) {
@@ -62,8 +94,7 @@ export default {
       try {
         await this.$axios
           .$post('/user/ready/app/activate/', {
-            api_id: apiId,
-            app_reference_url: this.$route.params.app_slug
+            app: this.application.id
           })
           .then((response) => {
             this.showMsg('Model activated to you Application.', 'is-info')
@@ -84,5 +115,10 @@ export default {
 }
 .card-footer-item:not(:last-child) {
   border-right: none;
+}
+.alt-text {
+  font-size: 20px;
+  /* color: #a9a8a8; */
+  text-transform: lowercase;
 }
 </style>
