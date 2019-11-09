@@ -115,7 +115,7 @@ export default {
   margin: 0;
 }
 #sub-title strong {
-  color: #0070f3 !important;
+  color: #0070f3;
 }
 #dashboard-app-header-section {
   padding-bottom: 0px;
