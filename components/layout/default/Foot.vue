@@ -87,7 +87,7 @@ export default {
   color: #000;
 }
 #social li a:hover {
-  color: #0070f3;
+  color: #0070f3 !important;
 }
 i {
   margin-right: 10px;
