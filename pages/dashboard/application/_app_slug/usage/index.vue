@@ -2,43 +2,39 @@
   <div>
     <app-header :application="application" />
     <div class="container">
-      <div class="columns">
-        <div class="column">
-          <section class="section">
-            <h1 class="title primary-text-color is-3">Application Usage</h1>
-            <p class="subtitle is-6 primary-text-color fix-height">
-              A summary of the usage of your application and API's.
-            </p>
-            <div class="columns has-text-centered">
-              <div class="column">
-                <div class="title primary-text-color">
-                  {{ usage.bucket }} <span class="alt-text">Calls</span>
-                </div>
-                <div class="subtitle primary-text-color">
-                  Bucket
-                </div>
-              </div>
-              <!-- <div class="is-divider-vertical" data-content="OR"></div> -->
-              <div class="column">
-                <div class="title primary-text-color">
-                  {{ usage.usage }} <span class="alt-text">Calls</span>
-                </div>
-                <div class="subtitle primary-text-color">
-                  Usage
-                </div>
-              </div>
-              <div class="column">
-                <div class="title primary-text-color">
-                  {{ usage.threshold }} <span class="alt-text">Calls</span>
-                </div>
-                <div class="subtitle primary-text-color">
-                  Threshold
-                </div>
-              </div>
+      <section class="section">
+        <h1 class="title primary-text-color is-3">Application Usage</h1>
+        <p class="subtitle is-6 primary-text-color fix-height">
+          A summary of the usage of your application and API's.
+        </p>
+        <div class="columns has-text-centered">
+          <div class="column">
+            <div class="title primary-text-color">
+              {{ usage.bucket }} <span class="alt-text">Calls</span>
             </div>
-          </section>
+            <div class="subtitle primary-text-color">
+              Bucket
+            </div>
+          </div>
+          <!-- <div class="is-divider-vertical" data-content="OR"></div> -->
+          <div class="column">
+            <div class="title primary-text-color">
+              {{ usage.usage }} <span class="alt-text">Calls</span>
+            </div>
+            <div class="subtitle primary-text-color">
+              Usage
+            </div>
+          </div>
+          <div class="column">
+            <div class="title primary-text-color">
+              {{ usage.threshold }} <span class="alt-text">Calls</span>
+            </div>
+            <div class="subtitle primary-text-color">
+              Threshold
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </template>
