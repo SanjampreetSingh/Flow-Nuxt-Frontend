@@ -246,6 +246,7 @@ export default {
           const lengthofResponse = Object.keys(response.data.demoData.body)
             .length
           this.inference.number = lengthofResponse
+          this.inference.length = lengthofResponse
           this.faceDetectionBoxes(response.data.demoData.body)
         })
     },
