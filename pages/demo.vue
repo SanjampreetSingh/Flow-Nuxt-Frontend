@@ -215,9 +215,10 @@ export default {
         vm.canvasValues.yStart = yStart
 
         // Save width and height change factor
-        vm.canvasValues.xFactor = renderableWidth / imageObj.width
-        vm.canvasValues.yFactor = renderableHeight / imageObj.height
-
+        vm.canvasValues.xFactor = renderableWidth
+        // renderableWidth / imageObj.width
+        vm.canvasValues.yFactor = renderableHeight
+        // renderableHeight / imageObj.height
         vm.context.drawImage(
           imageObj,
           xStart,
@@ -239,7 +240,7 @@ export default {
       await this.$axios
         .$post('/ready/demo/', {
           api_id: this.activeCategory.id,
-          data: this.activeImage.id
+          data: this.activeImage.url
         })
         .then((response) => {
           this.inference.result = response.data.demoData.body
@@ -257,13 +258,16 @@ export default {
     },
     drawRect(box) {
       // new coordinates according to rendered image on canvas
-      const x1 = box[0] * this.canvasValues.xFactor
-      const x2 = box[2] * this.canvasValues.xFactor
-      const y1 = box[1] * this.canvasValues.yFactor
-      const y2 = box[3] * this.canvasValues.yFactor
-      const width = x2 - x1
-      const height = y2 - y1
-
+      // const x1 = box[0] * this.canvasValues.xFactor
+      // const x2 = box[2] * this.canvasValues.xFactor
+      // const y1 = box[1] * this.canvasValues.yFactor
+      // const y2 = box[3] * this.canvasValues.yFactor
+      // const width = x2 - x1
+      // const height = y2 - y1
+      const left = box.left * this.canvasValues.xFactor
+      const top = box.top * this.canvasValues.yFactor
+      const width = box.width * this.canvasValues.xFactor
+      const height = box.height * this.canvasValues.yFactor
       const vm = this
       // Save canvas initial stage
       vm.context.save()
@@ -273,7 +277,7 @@ export default {
       // Draw Rectangle
       vm.context.lineWidth = `3`
       vm.context.strokeStyle = '#f6e15a'
-      vm.context.strokeRect(x1, y1, width, height)
+      // vm.context.strokeRect(top, left, width, height)
       // Reset canvas to previous stage
       vm.context.restore()
     }
