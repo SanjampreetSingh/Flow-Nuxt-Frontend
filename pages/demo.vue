@@ -264,10 +264,10 @@ export default {
       // const y2 = box[3] * this.canvasValues.yFactor
       // const width = x2 - x1
       // const height = y2 - y1
-      const left = box.left * this.canvasValues.xFactor
-      const top = box.top * this.canvasValues.yFactor
-      const width = box.width * this.canvasValues.xFactor
-      const height = box.height * this.canvasValues.yFactor
+      // const left = box.left * this.canvasValues.xFactor
+      // const top = box.top * this.canvasValues.yFactor
+      // const width = box.width * this.canvasValues.xFactor
+      // const height = box.height * this.canvasValues.yFactor
       const vm = this
       // Save canvas initial stage
       vm.context.save()
