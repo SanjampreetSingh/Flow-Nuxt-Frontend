@@ -80,7 +80,8 @@ export default {
     { src: '~/plugins/common', ssr: false },
     { src: '~/plugins/VueCodeHighlight', ssr: false },
     { src: '~/plugins/repository' },
-    { src: '~/plugins/ga.js', ssr: false }
+    { src: '~/plugins/ga.js', ssr: false },
+    { src: '~/plugins/darkmode.js', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
