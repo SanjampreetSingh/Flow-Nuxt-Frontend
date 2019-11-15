@@ -36,11 +36,11 @@
                     >
                       Activate
                     </a>-->
-                    <a class="card-footer-item" @click="activate(model.id)">
+                    <a @click="activate(model.id)" class="card-footer-item">
                       <btn
-                        color="is-info"
                         :loading="loader"
                         :disabled="disabled"
+                        color="is-info"
                       >
                         <span>Activate</span>
                       </btn>

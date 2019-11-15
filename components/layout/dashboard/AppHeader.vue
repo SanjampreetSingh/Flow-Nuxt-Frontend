@@ -1,7 +1,7 @@
 <template>
   <section
-    v-if="application.id != null"
     id="dashboard-app-header-section"
+    v-if="application.id != null"
     class="section has-background-light section-border-bottom"
   >
     <div class="container">

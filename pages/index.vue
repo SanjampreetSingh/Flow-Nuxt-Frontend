@@ -22,8 +22,8 @@
     <div class="section section-strip">
       <div class="section-strip-background">
         <img
-          class="section-strip-background-poster"
           :src="require('~/assets/img/ReadyModels/face_detection2.jpg')"
+          class="section-strip-background-poster"
           alt="Face Detection"
         />
         <div class="section-strip-background-mask"></div>

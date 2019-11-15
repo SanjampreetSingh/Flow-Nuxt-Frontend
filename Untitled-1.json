@@ -1,0 +1,44 @@
+{
+    "name": "flow",
+    "version": "1.0.0",
+    "description": "My kickass Nuxt.js project",
+    "author": "flow",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate",
+        "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    },
+    "dependencies": {
+        "@nuxtjs/auth": "^4.8.4",
+        "@nuxtjs/axios": "^5.3.6",
+        "@nuxtjs/pwa": "^3.0.0-0",
+        "@nuxtjs/recaptcha": "^0.5.3",
+        "@nuxtjs/robots": "^2.4.1",
+        "@nuxtjs/sitemap": "^2.0.0",
+        "buefy": "^0.8.4",
+        "nuxt": "^2.0.0",
+        "nuxt-clipboard2": "^0.2.1",
+        "nuxt-svg-loader": "^1.0.1",
+        "nuxt-validate": "^1.0.1",
+        "optimize-css-assets-webpack-plugin": "^5.0.3",
+        "particles.js": "^2.0.0",
+        "prismjs": "^1.17.1",
+        "terser-webpack-plugin": "^2.1.2",
+        "vue-avatar": "^2.1.8",
+        "vue-prism-component": "^1.1.1",
+        "vue-recaptcha": "^1.2.0"
+    },
+    "devDependencies": {
+        "@nuxtjs/eslint-config": "^1.0.1",
+        "@nuxtjs/eslint-module": "^1.0.0",
+        "babel-eslint": "^10.0.1",
+        "eslint": "^6.1.0",
+        "eslint-config-prettier": "^4.1.0",
+        "eslint-plugin-nuxt": ">=0.4.2",
+        "eslint-plugin-prettier": "^3.0.1",
+        "prettier": "^1.16.4"
+    }
+}

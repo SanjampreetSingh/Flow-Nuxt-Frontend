@@ -7,10 +7,10 @@
             <logo id="logo" />
           </nuxt-link>
           <div
-            class="navbar-burger burger"
-            :class="{ 'is-active': show }"
-            data-target="navbarExampleTransparentExample"
             @click="toggleShow"
+            :class="{ 'is-active': show }"
+            class="navbar-burger burger"
+            data-target="navbarExampleTransparentExample"
           >
             <span></span>
             <span></span>
@@ -19,8 +19,8 @@
         </div>
         <div
           id="navbarExampleTransparentExample"
-          class="navbar-menu"
           :class="{ 'is-active': show }"
+          class="navbar-menu"
         >
           <div class="navbar-end">
             <nuxt-link to="/demo" class="navbar-item nav-item-spacing">

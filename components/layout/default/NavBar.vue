@@ -1,16 +1,16 @@
 <template>
   <header>
-    <nav class="navbar is-fixed-top" :class="{ navbarScroll: navbarScroll }">
+    <nav :class="{ navbarScroll: navbarScroll }" class="navbar is-fixed-top">
       <div class="container">
         <div class="navbar-brand">
           <nuxt-link to="/" class="navbar-item" aria-label="home">
             <logo id="logo" />
           </nuxt-link>
           <div
-            class="navbar-burger burger"
             :class="{ 'is-active': show }"
-            data-target="navbarExampleTransparentExample"
             @click="toggleShow"
+            class="navbar-burger burger"
+            data-target="navbarExampleTransparentExample"
           >
             <span></span>
             <span></span>
@@ -19,8 +19,8 @@
         </div>
         <div
           id="navbarExampleTransparentExample"
-          class="navbar-menu"
           :class="{ 'is-active': show }"
+          class="navbar-menu"
         >
           <div id="nav-list" class="navbar-end">
             <nuxt-link to="/demo" class="navbar-item nav-item-spacing">
