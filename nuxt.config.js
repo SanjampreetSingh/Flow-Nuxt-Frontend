@@ -1,4 +1,4 @@
-const TerserPlugin = require('terser-webpack-plugin')
+// const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 export default {
   mode: 'universal',
@@ -165,16 +165,27 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extractCSS: true,
+    cache: true,
+    parallel: true,
+    sourceMap: true,
+    collapseBooleanAttributes: true,
+    decodeEntities: true,
+    minifyCSS: true,
+    minifyJS: true,
+    processConditionalComments: true,
+    removeEmptyAttributes: true,
+    removeRedundantAttributes: true,
+    trimCustomFragments: true,
+    useShortDoctype: true,
     optimization: {
       minimize: true,
       minimizer: [
-        new TerserPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: true,
-          exclude: /\/now__launcher.js/,
-        }),
+      //   new TerserPlugin({
+      //     cache: true,
+      //     parallel: true,
+      //     sourceMap: true,
+      //     exclude: /\/now__launcher.js/,
+      //   }),
         new OptimizeCssAssetsPlugin({})
       ],
       splitChunks: {
