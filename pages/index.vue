@@ -63,7 +63,7 @@
                 <div class="field">
                   <div class="control has-icons-left">
                     <div class="select is-medium is-dark">
-                      <select>
+                      <select aria-label="Select Language">
                         <option selected label="Python">Python</option>
                       </select>
                     </div>
