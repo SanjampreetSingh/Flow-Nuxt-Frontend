@@ -1,4 +1,4 @@
-// const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 export default {
   mode: 'universal',
@@ -43,7 +43,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favico.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css',
+        async: true,
+        defer: true
       },
       { rel: 'canonical', href: 'https://theflowai.com/' },
       {
@@ -167,11 +169,11 @@ export default {
     optimization: {
       minimize: true,
       minimizer: [
-        // new TerserPlugin({
-        //   cache: true,
-        //   parallel: true,
-        //   sourceMap: true
-        // }),
+        new TerserPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: true
+        }),
         new OptimizeCssAssetsPlugin({})
       ],
       splitChunks: {
