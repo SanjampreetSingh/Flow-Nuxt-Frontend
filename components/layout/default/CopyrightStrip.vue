@@ -54,7 +54,7 @@
       </div>
       <div class="columns">
         <div class="column has-text-centered">
-          <p id="copyright-content" class="primary-text-color">
+          <p id="copyright-content" class="has-text-white">
             Copyright © {{ new Date().getFullYear() }}
             <span class="has-text-weight-bold">Flow</span> All rights reserved.
           </p>
