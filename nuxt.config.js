@@ -1,5 +1,3 @@
-// const TerserPlugin = require('terser-webpack-plugin')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 export default {
   mode: 'universal',
   /*
@@ -105,18 +103,6 @@ export default {
     '@nuxtjs/robots',
     '@nuxtjs/sitemap'
   ],
-  robots: [
-    {
-      UserAgent: '*',
-      Disallow: ['/dashboard']
-    }
-  ],
-  // sitemap: {
-  //   hostname: 'https://theflowai.com',
-  //   gzip: true,
-  //   exclude: ['/dashboard', '/_nuxt'],
-  //   routes: ['/login', '/demo', '/']
-  // },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -165,40 +151,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    cache: true,
-    parallel: true,
-    sourceMap: true,
-    collapseBooleanAttributes: true,
-    decodeEntities: true,
-    minifyCSS: true,
-    minifyJS: true,
-    processConditionalComments: true,
-    removeEmptyAttributes: true,
-    removeRedundantAttributes: true,
-    trimCustomFragments: true,
-    useShortDoctype: true,
-    optimization: {
-      minimize: true,
-      minimizer: [
-      //   new TerserPlugin({
-      //     cache: true,
-      //     parallel: true,
-      //     sourceMap: true,
-      //     exclude: /\/now__launcher.js/,
-      //   }),
-        new OptimizeCssAssetsPlugin({})
-      ],
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(vue)$/,
-            chunks: 'all',
-            enforce: true
-          }
-        }
-      }
-    },
     extend(config, ctx) {
       if (ctx.isDev) {
         config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
