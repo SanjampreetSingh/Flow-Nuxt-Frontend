@@ -112,6 +112,11 @@ export default {
       renderableWidth: ''
     }
   },
+  head() {
+    return {
+      title: `Try The Flow AI's AI Demo | Flow`
+    }
+  },
   computed: {
     canvas() {
       return this.$refs.imagecanvas

@@ -32,6 +32,11 @@ export default {
       isEmail: false
     }
   },
+  head() {
+    return {
+      title: 'Get Started | Flow'
+    }
+  },
   methods: {
     toggleEmail() {
       this.isEmail = !this.isEmail

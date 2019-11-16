@@ -8,7 +8,7 @@ export default {
       lang: 'en'
     },
     title:
-      'Flow | Machine Intelligence Platform for Developers and Researchers',
+      'Machine Intelligence Platform | Flow',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -20,7 +20,7 @@ export default {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: `flowai, theflowai, ml, ai, ai api, face detection, facial landmark, machine learning, artificial intelligence`
+        content: `flow, flowai, theflowai, ml, ai, ai api, face detection, facial landmark, machine learning, artificial intelligence, the flow ai, the flow ai, ai ludhiana, ai india, ai punjab, ml ludhiana, ml india, ml punjab, the flow ai india, the flow ai ludhiana, FLOW, FLOWAI, THEFLOWAI, flow ml, flow artificial intelligence`
       },
       {
         hid: 'theme-color',
