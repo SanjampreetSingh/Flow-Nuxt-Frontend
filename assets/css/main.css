@@ -17,20 +17,6 @@ body {
     --text-color: 255, 255, 255;
 }
 
-.dark-mode img {
-    filter: grayscale(20%);
-}
-
-@media (prefers-dark-interface:dark) {
-    body {
-        --bg-color: 0, 0, 0;
-        --text-color: 255, 255, 255;
-    }
-    img {
-        filter: grayscale(20%);
-    }
-}
-
 ::-moz-selection {
     /* Code for Firefox */
     color: #000;
@@ -148,10 +134,7 @@ a.navbar-item:hover {
 }
 
 
-/* Scroll bar */
-
-
-/* total width */
+/* Scroll bar  */
 
 body::-webkit-scrollbar {
     background-color: rgb(var(--bg-color));

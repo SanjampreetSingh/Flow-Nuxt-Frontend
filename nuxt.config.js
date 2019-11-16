@@ -15,7 +15,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `Corporations ranging from small to large scales can very easily leverage the capabilities of our trained precise machine learning model interfaces in their workflow. A powerful research platform for researchers and developers.`
+        content: `Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workflow.`
       },
       {
         hid: 'keywords',

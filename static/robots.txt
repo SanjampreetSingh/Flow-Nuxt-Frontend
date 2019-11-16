@@ -1,2 +1,4 @@
 User-agent: *
-Allow:/sitemap.xml
+Disallow: /dashboard/
+
+Sitemap: https://theflowai.com/sitemap.xml
