@@ -19,14 +19,14 @@ export default {
   },
   data() {
     return {
-      structuredData: `{
-        "@context": "http://www.schema.org",
-        "@type": "WebSite",
-        "name": "Flow",
-        "alternateName": "The Flow AI",
-        "url": "https://theflowai.com/",
-        "logo": "https://theflowai.com/icon.png"
-      }`
+      structuredData: {
+        '@context': 'http://www.schema.org',
+        '@type': 'WebSite',
+        name: 'Flow',
+        alternateName: 'The Flow AI',
+        url: 'https://theflowai.com/',
+        logo: 'https://theflowai.com/icon.png'
+      }
     }
   },
   head() {
