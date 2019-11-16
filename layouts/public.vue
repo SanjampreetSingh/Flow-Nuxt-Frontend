@@ -13,6 +13,23 @@ import DarkMode from '~/components/general/DarkMode'
 import CopyrightStrip from '~/components/layout/default/CopyrightStrip'
 
 export default {
+  components: {
+    NavBar,
+    DarkMode,
+    CopyrightStrip
+  },
+  data() {
+    return {
+      structuredData: `{
+        "@context": "http://www.schema.org",
+        "@type": "WebSite",
+        "name": "Flow",
+        "alternateName": "The Flow AI",
+        "url": "https://theflowai.com/",
+        "logo": "https://theflowai.com/icon.png"
+      }`
+    }
+  },
   head() {
     return {
       meta: [
@@ -73,14 +90,16 @@ export default {
           content:
             'Flow | Machine Intelligence Platform for Developers and Researchers'
         }
+      ],
+      __dangerouslyDisableSanitizers: ['script'],
+      script: [
+        {
+          innerHTML: JSON.stringify(this.structuredData),
+          type: 'application/ld+json'
+        }
       ]
     }
   },
-  middleware: 'guest',
-  components: {
-    NavBar,
-    DarkMode,
-    CopyrightStrip
-  }
+  middleware: 'guest'
 }
 </script>

@@ -114,7 +114,6 @@ a.navbar-item:hover {
 
 .btn-main {
     color: rgb(var(--text-color));
-    background: rgb(var(--bg-color));
     padding: 10px 15px;
     border-radius: 5px;
     transition: 0.4s;
