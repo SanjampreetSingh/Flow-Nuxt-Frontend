@@ -22,7 +22,7 @@ export default {
     return {
       structuredData: {
         '@context': 'http://www.schema.org',
-        '@type': 'WebSite',
+        '@type': 'Organization',
         name: 'Flow',
         alternateName: 'The Flow AI',
         url: 'https://theflowai.com/',
