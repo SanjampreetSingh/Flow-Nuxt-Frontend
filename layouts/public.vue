@@ -22,11 +22,27 @@ export default {
     return {
       structuredData: {
         '@context': 'http://www.schema.org',
-        '@type': 'Organization',
-        name: 'Flow',
-        alternateName: 'The Flow AI',
+        '@type': 'Website',
         url: 'https://theflowai.com/',
-        logo: 'https://theflowai.com/icon.png'
+        publisher: {
+          '@type': 'Organization',
+          name: 'Flow',
+          logo: {
+            '@type': 'ImageObject',
+            url: '/icon.png',
+            height: 640,
+            width: 640
+          }
+        },
+        name: 'Flow',
+        description:
+          'Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workflow.',
+        sameAs: [
+          'https://www.facebook.com/flowml/',
+          'https://twitter.com/Flow_ArtInt',
+          'https://www.instagram.com/flow_artint/',
+          'https://www.linkedin.com/company/flow-artint/'
+        ]
       }
     }
   },
@@ -89,6 +105,12 @@ export default {
           name: 'apple-mobile-web-app-title',
           content:
             'Flow | Machine Intelligence Platform for Developers and Researchers'
+        }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://theflowai.com' + this.$route.path
         }
       ],
       __dangerouslyDisableSanitizers: ['script'],
