@@ -165,16 +165,14 @@ export default {
       },
       terserOptions: {
         output: {
-          comments: /^\**!|@preserve|@license|@cc_on/
+          comments: /^\**!|@preserve|@license|@cc_on/i
         }
       }
     },
     extend(config, ctx) {
+      // Run on save
       if (ctx.isDev) {
-        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
-      }
-      // Run ESLint on save
-      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map',
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
