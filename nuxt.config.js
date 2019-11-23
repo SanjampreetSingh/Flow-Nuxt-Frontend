@@ -158,7 +158,7 @@ export default {
     extractCSS: true,
     terser: {
       parallel: true,
-      cache: false,
+      cache: true,
       sourceMap: false,
       extractComments: {
         filename: 'LICENSES'
