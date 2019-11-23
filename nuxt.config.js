@@ -165,7 +165,7 @@ export default {
       },
       terserOptions: {
         output: {
-          comments: /^\**!|@preserve|@license|@cc_on/i
+          comments: /^\**!|@preserve|@license|@cc_on/
         }
       }
     },
