@@ -7,12 +7,12 @@
     }],
     "routes": [{
             "src": "/_nuxt",
-            "dest": "/404.html",
+            "dest": "/404",
             "status": 404
         },
         {
             "src": "/_nuxt/img/",
-            "dest": "/404.html",
+            "dest": "/404",
             "status": 404
         }
     ]

@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /dashboard/
+Disallow: /404/
 
 Sitemap: https://theflowai.com/sitemap.xml
