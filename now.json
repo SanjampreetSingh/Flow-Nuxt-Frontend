@@ -6,22 +6,21 @@
         "config": {}
     }],
     "routes": [{
+            "src": "/_nuxt",
+            "status": 404,
+            "dest": "/404"
+        },
+        {
+            "src": "/_nuxt/img",
+            "status": 404,
+            "dest": "/404"
+        }, {
             "handle": "filesystem"
         },
         {
-            "src": "/_nuxt",
-            "dest": "/404",
-            "status": 404
-        },
-        {
-            "src": "/_nuxt/img/",
-            "dest": "/404",
-            "status": 404
-        },
-        {
-            "src": "/.*",
-            "dest": "/404",
-            "status": 404
+            "src": "/(.*)",
+            "status": 404,
+            "dest": "/"
         }
     ]
 }
