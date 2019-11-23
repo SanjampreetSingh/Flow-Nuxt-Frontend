@@ -6,6 +6,9 @@
         "config": {}
     }],
     "routes": [{
+            "handle": "filesystem"
+        },
+        {
             "src": "/_nuxt",
             "dest": "/404",
             "status": 404
@@ -16,8 +19,6 @@
             "status": 404
         },
         {
-            "handle": "filesystem"
-        }, {
             "src": "/.*",
             "dest": "/404",
             "status": 404
