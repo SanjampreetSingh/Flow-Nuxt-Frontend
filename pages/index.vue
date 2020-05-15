@@ -22,8 +22,8 @@
     <div class="section section-strip">
       <div class="section-strip-background">
         <img
-          class="section-strip-background-poster"
           :src="require('~/assets/img/ReadyModels/face_detection2.jpg')"
+          class="section-strip-background-poster"
           alt="Face Detection"
         />
         <div class="section-strip-background-mask"></div>
@@ -63,8 +63,8 @@
                 <div class="field">
                   <div class="control has-icons-left">
                     <div class="select is-medium is-dark">
-                      <select>
-                        <option selected>Python</option>
+                      <select aria-label="Select Language">
+                        <option selected label="Python">Python</option>
                       </select>
                     </div>
                     <div class="icon is-small is-left has-text-dark">

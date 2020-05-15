@@ -4,14 +4,14 @@
       <nav class="navbar is-transparent navbarScroll">
         <div class="container">
           <div class="navbar-brand">
-            <nuxt-link to="/" class="navbar-item">
+            <nuxt-link to="/" class="navbar-item" aria-label="home">
               <logo id="logo" />
             </nuxt-link>
             <div
-              class="navbar-burger burger"
               :class="{ 'is-active': show }"
-              data-target="navbarExampleTransparentExample"
               @click="toggleShow"
+              class="navbar-burger burger"
+              data-target="navbarExampleTransparentExample"
             >
               <span></span>
               <span></span>
@@ -20,13 +20,13 @@
           </div>
           <div
             id="navbarExampleTransparentExample"
-            class="navbar-menu"
             :class="{ 'is-active': show }"
+            class="navbar-menu"
           >
             <div class="navbar-end">
               <!-- <a class="navbar-item">Demo</a>
               <a class="navbar-item">Documentation</a> -->
-              <a class="navbar-item" @click="logout">
+              <a @click="logout" class="navbar-item">
                 <i class="fas fa-sign-out-alt icon"></i>
                 <span>Logout</span>
               </a>

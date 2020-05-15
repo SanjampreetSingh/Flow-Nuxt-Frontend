@@ -2,11 +2,11 @@
   <div>
     <button
       :type="type"
-      class="button is-fullwidth"
       :class="[colorClass, { 'is-outlined': hover }]"
       :disabled="disabled"
       @mouseenter="mouseover"
       @mouseleave="mouseover"
+      class="button is-fullwidth"
     >
       <slot v-if="!loading"></slot>
       <ellipsis-loader v-else color="#fff" />

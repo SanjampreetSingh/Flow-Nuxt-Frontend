@@ -107,7 +107,14 @@ export default {
       inference: {
         length: 0,
         result: 'Click on image or api'
-      }
+      },
+      renderableHeight: '',
+      renderableWidth: ''
+    }
+  },
+  head() {
+    return {
+      title: `Try The Flow AI's AI Demo | Flow`
     }
   },
   computed: {
@@ -181,32 +188,32 @@ export default {
       const fitImageOn = function(canvas, imageObj) {
         const imageAspectRatio = imageObj.width / imageObj.height
         const canvasAspectRatio = vm.canvasValues.width / vm.canvasValues.height
-        let renderableHeight, renderableWidth, xStart, yStart
+        let xStart, yStart
 
         // If image's aspect ratio is less than canvas's we fit on height
         // and place the image centrally along width
         if (imageAspectRatio < canvasAspectRatio) {
-          renderableHeight = vm.canvasValues.height
-          renderableWidth =
-            imageObj.width * (renderableHeight / imageObj.height)
-          xStart = (vm.canvasValues.width - renderableWidth) / 2
+          vm.renderableHeight = vm.canvasValues.height
+          vm.renderableWidth =
+            imageObj.width * (vm.renderableHeight / imageObj.height)
+          xStart = (vm.canvasValues.width - vm.renderableWidth) / 2
           yStart = 0
         }
 
         // If image's aspect ratio is greater than canvas's we fit on width
         // and place the image centrally along height
         else if (imageAspectRatio > canvasAspectRatio) {
-          renderableWidth = vm.canvasValues.width
-          renderableHeight =
-            imageObj.height * (renderableWidth / imageObj.width)
+          vm.renderableWidth = vm.canvasValues.width
+          vm.renderableHeight =
+            imageObj.height * (vm.renderableWidth / imageObj.width)
           xStart = 0
-          yStart = (vm.canvasValues.height - renderableHeight) / 2
+          yStart = (vm.canvasValues.height - vm.renderableHeight) / 2
         }
 
         // Happy path - keep aspect ratio
         else {
-          renderableHeight = vm.canvasValues.height
-          renderableWidth = vm.canvasValues.width
+          vm.renderableHeight = vm.canvasValues.height
+          vm.renderableWidth = vm.canvasValues.width
           xStart = 0
           yStart = 0
         }
@@ -215,15 +222,14 @@ export default {
         vm.canvasValues.yStart = yStart
 
         // Save width and height change factor
-        vm.canvasValues.xFactor = renderableWidth / imageObj.width
-        vm.canvasValues.yFactor = renderableHeight / imageObj.height
-
+        vm.canvasValues.xFactor = vm.renderableWidth / imageObj.width
+        vm.canvasValues.yFactor = vm.renderableHeight / imageObj.height
         vm.context.drawImage(
           imageObj,
           xStart,
           yStart,
-          renderableWidth,
-          renderableHeight
+          vm.renderableWidth,
+          vm.renderableHeight
         )
       }
 
@@ -239,13 +245,12 @@ export default {
       await this.$axios
         .$post('/ready/demo/', {
           api_id: this.activeCategory.id,
-          data: this.activeImage.id
+          data: this.activeImage.url
         })
         .then((response) => {
           this.inference.result = response.data.demoData.body
           // eslint-disable-next-line
-          const lengthofResponse = Object.keys(response.data.demoData.body)
-            .length
+          const lengthofResponse = Object.keys(response.data.demoData.body).length
           this.inference.length = lengthofResponse
           this.faceDetectionBoxes(response.data.demoData.body)
         })
@@ -257,13 +262,16 @@ export default {
     },
     drawRect(box) {
       // new coordinates according to rendered image on canvas
-      const x1 = box[0] * this.canvasValues.xFactor
-      const x2 = box[2] * this.canvasValues.xFactor
-      const y1 = box[1] * this.canvasValues.yFactor
-      const y2 = box[3] * this.canvasValues.yFactor
-      const width = x2 - x1
-      const height = y2 - y1
-
+      // const x1 = box[0] * this.canvasValues.xFactor
+      // const x2 = box[2] * this.canvasValues.xFactor
+      // const y1 = box[1] * this.canvasValues.yFactor
+      // const y2 = box[3] * this.canvasValues.yFactor
+      // const width = x2 - x1
+      // const height = y2 - y1
+      const left = box.left * this.renderableWidth
+      const top = box.top * this.renderableHeight
+      const width = box.width * this.renderableWidth
+      const height = box.height * this.renderableHeight
       const vm = this
       // Save canvas initial stage
       vm.context.save()
@@ -273,7 +281,7 @@ export default {
       // Draw Rectangle
       vm.context.lineWidth = `3`
       vm.context.strokeStyle = '#f6e15a'
-      vm.context.strokeRect(x1, y1, width, height)
+      vm.context.strokeRect(left, top, width, height)
       // Reset canvas to previous stage
       vm.context.restore()
     }

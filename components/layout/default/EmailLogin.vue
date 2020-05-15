@@ -11,10 +11,10 @@
     <form @submit.prevent="validate">
       <vue-recaptcha
         ref="recaptcha"
-        size="invisible"
-        sitekey="6Ldl6boUAAAAAH_jsSRo97SQD3EyJeOSUEVhDcO8"
         @verify="onCaptchaVerified"
         @expired="onCaptchaExpired"
+        size="invisible"
+        sitekey="6Ldl6boUAAAAAH_jsSRo97SQD3EyJeOSUEVhDcO8"
       >
       </vue-recaptcha>
       <div class="columns is-centered">
@@ -23,8 +23,8 @@
             <a>
               <i
                 id="arrow-left"
-                class="fa fa-arrow-left has-text-info"
                 @click="resetForm"
+                class="fa fa-arrow-left has-text-info"
               >
               </i>
             </a>
@@ -71,10 +71,10 @@
       <div class="columns is-centered">
         <div class="column is-3 pt">
           <btn
-            type="submit"
-            color="is-dark"
             :loading="loader"
             :disabled="disabled"
+            type="submit"
+            color="is-dark"
           >
             <span v-if="key == 1" class="content">Register</span>
             <span v-else-if="key == 2" class="content">Login</span>

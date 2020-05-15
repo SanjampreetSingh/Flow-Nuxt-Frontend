@@ -37,6 +37,9 @@
     <div class="container">
       <section class="section">
         <h1 class="title primary-text-color is-3">Your Applications</h1>
+        <p class="subtitle is-6 primary-text-color fix-height">
+          A list of application created by you.
+        </p>
         <div class="columns has-text-centered is-multiline">
           <div v-if="!applications.length" class="column is-3">
             <div class="card">

@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 const TerserPlugin = require('terser-webpack-plugin');
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+=======
+>>>>>>> d00661464dfa7f46b6526dbb997b7448befc94e4
 export default {
   mode: 'universal',
   /*
@@ -8,22 +11,31 @@ export default {
    */
   head: {
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
+      dir: 'ltr'
     },
+<<<<<<< HEAD
     title:
       'Siey AI | Machine Intelligence Platform for Developers and Researchers',
+=======
+    title: 'Machine Intelligence Platform | Flow',
+>>>>>>> d00661464dfa7f46b6526dbb997b7448befc94e4
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        name: 'viewport',
+        content: 'initial-scale=1, minimum-scale=1, width=device-width'
+      },
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       {
         hid: 'description',
         name: 'description',
-        content: `Corporations ranging from small to large scales can very easily leverage the capabilities of our trained precise machine learning model interfaces in their workflow. A powerful research platform for researchers and developers.`
+        content: `Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workflow.`
       },
       {
         hid: 'keywords',
         name: 'keywords',
-        content: `flowai, theflowai, ml, ai, ai api, face detection, facial landmark, machine learning, artificial intelligence`
+        content: `flow, flowai, theflowai, ml, ai, ai api, face detection, facial landmark, machine learning, artificial intelligence, the flow ai, the flow ai, ai ludhiana, ai india, ai punjab, ml ludhiana, ml india, ml punjab, the flow ai india, the flow ai ludhiana, FLOW, FLOWAI, THEFLOWAI, flow ml, flow artificial intelligence`
       },
       {
         hid: 'theme-color',
@@ -44,9 +56,19 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favico.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css',
+        async: true,
+        defer: true
       },
-      { rel: 'canonical', href: 'https://theflowai.com/' }
+      {
+        rel: 'manifest',
+        href: 'https://theflowai.com/manifest.webmanifest'
+      },
+      {
+        rel: 'shortcut icon',
+        href: '/favico.ico'
+      }
     ],
     script: [
       {
@@ -73,7 +95,8 @@ export default {
     { src: '~/plugins/common', ssr: false },
     { src: '~/plugins/VueCodeHighlight', ssr: false },
     { src: '~/plugins/repository' },
-    { src: '~/plugins/ga.js', ssr: false }
+    { src: '~/plugins/ga.js', ssr: false },
+    { src: '~/plugins/darkmode.js', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -95,18 +118,6 @@ export default {
     '@nuxtjs/robots',
     '@nuxtjs/sitemap'
   ],
-  robots: [
-    {
-      UserAgent: '*',
-      Disallow: ['/dashboard']
-    }
-  ],
-  sitemap: {
-    hostname: 'https://theflowai.com',
-    gzip: true,
-    exclude: ['/dashboard', '/_nuxt'],
-    routes: ['/login', '/demo', '/']
-  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -156,6 +167,7 @@ export default {
      ** You can extend webpack config here
      */
     extractCSS: true,
+<<<<<<< HEAD
     optimization: {
       minimize: true,
       minimizer: [
@@ -178,13 +190,35 @@ export default {
          test: /\.(vue)$/,
          chunks: 'all',
          enforce: true
+=======
+    terser: {
+      parallel: true,
+      cache: true,
+      sourceMap: false,
+      extractComments: {
+        filename: 'LICENSES'
+      },
+      terserOptions: {
+        output: {
+          comments: /^\**!|@preserve|@license|@cc_on/
+>>>>>>> d00661464dfa7f46b6526dbb997b7448befc94e4
         }
        }
       }
     },
     extend(config, ctx) {
+      // Run on save
       if (ctx.isDev) {
-        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map',
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
+        })
       }
     }
   }

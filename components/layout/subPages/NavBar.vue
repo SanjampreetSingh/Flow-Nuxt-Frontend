@@ -3,14 +3,14 @@
     <nav class="navbar is-fixed-top">
       <div class="container">
         <div class="navbar-brand">
-          <nuxt-link to="/" class="navbar-item">
+          <nuxt-link to="/" class="navbar-item" aria-label="home">
             <logo id="logo" />
           </nuxt-link>
           <div
-            class="navbar-burger burger"
-            :class="{ 'is-active': show }"
-            data-target="navbarExampleTransparentExample"
             @click="toggleShow"
+            :class="{ 'is-active': show }"
+            class="navbar-burger burger"
+            data-target="navbarExampleTransparentExample"
           >
             <span></span>
             <span></span>
@@ -19,8 +19,8 @@
         </div>
         <div
           id="navbarExampleTransparentExample"
-          class="navbar-menu"
           :class="{ 'is-active': show }"
+          class="navbar-menu"
         >
           <div class="navbar-end">
             <nuxt-link to="/demo" class="navbar-item nav-item-spacing">
@@ -30,7 +30,7 @@
               href="https://docs.theflowai.com"
               target="_blank"
               class="navbar-item nav-item-spacing"
-              rel="noreferrer"
+              rel="noreferrer nofollow noopener"
             >
               Documentation
             </a>

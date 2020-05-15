@@ -14,18 +14,18 @@
           <form @submit.prevent="validate">
             <vue-recaptcha
               ref="recaptcha"
-              size="invisible"
-              sitekey="6Ldl6boUAAAAAH_jsSRo97SQD3EyJeOSUEVhDcO8"
               @verify="onCaptchaVerified"
               @expired="onCaptchaExpired"
+              size="invisible"
+              sitekey="6Ldl6boUAAAAAH_jsSRo97SQD3EyJeOSUEVhDcO8"
             >
             </vue-recaptcha>
             <client-only>
               <b-field
-                label="Application Name"
-                class="primary-text-color"
                 :type="{ 'is-danger': errors.has('name') }"
                 :message="errors.first('name')"
+                label="Application Name"
+                class="primary-text-color"
               >
                 <input
                   id="name"
@@ -54,10 +54,10 @@
               </div>
               <div class="column">
                 <btn
-                  type="submit"
-                  color="is-dark"
                   :loading="loader"
                   :disabled="disabled"
+                  type="submit"
+                  color="is-dark"
                 >
                   <span>Create</span>
                 </btn>

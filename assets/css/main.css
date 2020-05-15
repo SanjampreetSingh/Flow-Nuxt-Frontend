@@ -13,22 +13,9 @@ body {
 }
 
 .dark-mode {
-    --bg-color: 0, 0, 0;
+    /* --bg-color: 0, 0, 0; */
     --text-color: 255, 255, 255;
-}
-
-.dark-mode img {
-    filter: grayscale(20%);
-}
-
-@media (prefers-dark-interface:dark) {
-    body {
-        --bg-color: 0, 0, 0;
-        --text-color: 255, 255, 255;
-    }
-    img {
-        filter: grayscale(20%);
-    }
+    --bg-color: 28, 28, 28;
 }
 
 ::-moz-selection {
@@ -128,7 +115,6 @@ a.navbar-item:hover {
 
 .btn-main {
     color: rgb(var(--text-color));
-    background: rgb(var(--bg-color));
     padding: 10px 15px;
     border-radius: 5px;
     transition: 0.4s;
@@ -148,10 +134,7 @@ a.navbar-item:hover {
 }
 
 
-/* Scroll bar */
-
-
-/* total width */
+/* Scroll bar  */
 
 body::-webkit-scrollbar {
     background-color: rgb(var(--bg-color));

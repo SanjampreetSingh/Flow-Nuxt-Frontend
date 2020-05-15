@@ -12,6 +12,39 @@ import DarkMode from '~/components/general/DarkMode'
 import CopyrightStrip from '~/components/layout/default/CopyrightStrip'
 
 export default {
+  components: {
+    NavBar,
+    DarkMode,
+    CopyrightStrip
+  },
+  data() {
+    return {
+      structuredData: {
+        '@context': 'http://www.schema.org',
+        '@type': 'Website',
+        url: 'https://theflowai.com/',
+        publisher: {
+          '@type': 'Organization',
+          name: 'Flow',
+          logo: {
+            '@type': 'ImageObject',
+            url: '/icon.png',
+            height: 640,
+            width: 640
+          }
+        },
+        name: 'Flow',
+        description:
+          'Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workflow.',
+        sameAs: [
+          'https://www.facebook.com/flowml/',
+          'https://twitter.com/Flow_ArtInt',
+          'https://www.instagram.com/flow_artint/',
+          'https://www.linkedin.com/company/flow-artint/'
+        ]
+      }
+    }
+  },
   head() {
     return {
       meta: [
@@ -21,7 +54,7 @@ export default {
         },
         {
           property: 'og:description',
-          content: `Corporations ranging from small to large scales can very easily leverage the capabilities of our trained precise machine learning model interfaces in their workflow. A powerful research platform for researchers and developers.`
+          content: `Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workflow.`
         },
         {
           property: 'og:type',
@@ -53,7 +86,7 @@ export default {
         },
         {
           name: 'twitter:description',
-          content: `Corporations ranging from small to large scales can very easily leverage the capabilities of our trained precise machine learning model interfaces in their workflow. A powerful research platform for researchers and developers.`
+          content: `Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workflow.`
         },
         {
           name: 'twitter:image',
@@ -72,14 +105,22 @@ export default {
           content:
             'Flow | Machine Intelligence Platform for Developers and Researchers'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://theflowai.com' + this.$route.path
+        }
+      ],
+      __dangerouslyDisableSanitizers: ['script'],
+      script: [
+        {
+          innerHTML: JSON.stringify(this.structuredData),
+          type: 'application/ld+json'
+        }
       ]
     }
   },
-  middleware: 'guest',
-  components: {
-    NavBar,
-    DarkMode,
-    CopyrightStrip
-  }
+  middleware: 'guest'
 }
 </script>

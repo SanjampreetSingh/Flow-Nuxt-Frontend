@@ -17,9 +17,11 @@ export default {
       if (addRemoveClass === 'addClass') {
         el.classList.add(className)
         vm.darkMode = true
+        vm.$auth.$storage.setLocalStorage('dark_mode', 1)
       } else {
         el.classList.remove(className)
         vm.darkMode = false
+        vm.$auth.$storage.setLocalStorage('dark_mode', 0)
       }
     },
     toggleDarkMode() {

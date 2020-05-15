@@ -33,6 +33,16 @@ export default {
       verified: this.$auth.user.verified
     }
   },
+  head() {
+    return {
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://theflowai.com' + this.$route.path
+        }
+      ]
+    }
+  },
   computed: {
     ...mapGetters(['loggedInUser'])
   }
