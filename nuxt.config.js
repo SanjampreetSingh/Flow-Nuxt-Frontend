@@ -1,4 +1,5 @@
-// const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 export default {
   mode: 'universal',
@@ -10,7 +11,7 @@ export default {
       lang: 'en'
     },
     title:
-      'Flow | Machine Intelligence Platform for Developers and Researchers',
+      'Siey AI | Machine Intelligence Platform for Developers and Researchers',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -158,22 +159,27 @@ export default {
     optimization: {
       minimize: true,
       minimizer: [
-        // new TerserPlugin({
-        //   cache: true,
-        //   parallel: true,
-        //   sourceMap: true
-        // }),
-        new OptimizeCssAssetsPlugin({})
+       new TerserPlugin({
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        sourceMap: true,
+        extractComments: false,
+        parallel: true,
+       }),
+       new OptimizeCssAssetsPlugin({})
       ],
       splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(vue)$/,
-            chunks: 'all',
-            enforce: true
-          }
+       cacheGroups: {
+        styles: {
+         name: 'styles',
+         test: /\.(vue)$/,
+         chunks: 'all',
+         enforce: true
         }
+       }
       }
     },
     extend(config, ctx) {

@@ -4,7 +4,7 @@
       <div class="container">
         <div class="navbar-brand">
           <nuxt-link to="/" class="navbar-item">
-            <logo id="logo" />
+            Siey AI
           </nuxt-link>
           <div
             class="navbar-burger burger"
