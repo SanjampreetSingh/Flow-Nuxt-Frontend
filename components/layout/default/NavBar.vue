@@ -4,7 +4,8 @@
       <div class="container">
         <div class="navbar-brand">
           <nuxt-link to="/" class="navbar-item" aria-label="home">
-            <logo id="logo" />
+            <!-- <logo id="logo" /> -->
+            <h1>SIEY AI</h1>
           </nuxt-link>
           <div
             :class="{ 'is-active': show }"
@@ -27,7 +28,7 @@
               Demo
             </nuxt-link>
             <a
-              href="https://docs.theflowai.com"
+              href="https://docs.theSieyai.com"
               target="_blank"
               class="navbar-item nav-item-spacing"
               rel="noreferrer nofollow noopener"
@@ -50,11 +51,11 @@
   </header>
 </template>
 <script>
-import Logo from '~/assets/img/logo.svg'
+// import Logo from '~/assets/img/logo.svg'
 export default {
-  components: {
-    Logo
-  },
+  // components: {
+  //   Logo
+  // },
   data() {
     return {
       show: false,

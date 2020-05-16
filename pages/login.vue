@@ -34,7 +34,7 @@ export default {
   },
   head() {
     return {
-      title: 'Get Started | Flow'
+      title: 'Get Started | Siey'
     }
   },
   methods: {

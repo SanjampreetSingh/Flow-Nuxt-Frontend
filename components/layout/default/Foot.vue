@@ -10,7 +10,7 @@
           <ul id="social">
             <li>
               <a
-                href="https://www.twitter.com/Flow_ArtInt"
+                href="https://www.twitter.com/Siey_ArtInt"
                 aria-label="twitter"
                 target="_blank"
                 rel="noreferrer nofollow noopener"
@@ -21,7 +21,7 @@
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/company/flow-api"
+                href="https://www.linkedin.com/company/Siey-api"
                 aria-label="linkedin"
                 target="_blank"
                 rel="noreferrer nofollow noopener"
@@ -32,7 +32,7 @@
             </li>
             <li>
               <a
-                href="https://www.instagram.com/flow_artint/"
+                href="https://www.instagram.com/Siey_artint/"
                 aria-label="instagram"
                 target="_blank"
                 rel="noreferrer nofollow noopener"
@@ -43,7 +43,7 @@
             </li>
             <li>
               <a
-                href="https://www.facebook.com/flowml"
+                href="https://www.facebook.com/Sieyml"
                 aria-label="facebook"
                 target="_blank"
                 rel="noreferrer nofollow noopener"
@@ -57,7 +57,7 @@
         <div class="column has-text-centered">
           <h3 class="title is-4">Contact Info</h3>
           <a
-            href="mailto:flow.support@protonmail.com"
+            href="mailto:Siey.support@protonmail.com"
             id="contact-btn"
             class="btn-main"
             aria-label="contact"

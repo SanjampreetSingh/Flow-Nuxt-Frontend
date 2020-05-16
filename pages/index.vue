@@ -36,8 +36,8 @@
           </div>
           <p class="section-content has-text-justified primary-text-color">
             Detection of all the human faces altogether in images is beneficial
-            in many use cases. Flow gives you the power of automating such
-            process in your workflow using our cutting-edge machine intelligence
+            in many use cases. Siey gives you the power of automating such
+            process in your workSiey using our cutting-edge machine intelligence
             technology. And it's easy to do so. Get started with automating face
             detection in your images with our right out-of-the-box API in just a
             few lines of code!
@@ -118,8 +118,8 @@
           <h1 class="section-heading">Face Detection</h1>
           <p class="section-content has-text-justified">
             Detection of all the human faces altogether in images is beneficial
-            in many use cases. Flow gives you the power of automating such
-            process in your workflow using our cutting-edge machine intelligence
+            in many use cases. Siey gives you the power of automating such
+            process in your workSiey using our cutting-edge machine intelligence
             technology. And it's easy to do so. Get started with automating face
             detection in your images with our right out-of-the-box API in just a
             few lines of code!
@@ -170,12 +170,12 @@ export default {
     return {
       html: `
       # Import dependencies
-      from flowai import FlowApp, Model
+      from Sieyai import SieyApp, Model
 
       # Initialize your app with:
       # 1. API key
       # 2. Model to use for prediction
-      app = FlowApp(api_key="YOUR_API_KEY")
+      app = SieyApp(api_key="YOUR_API_KEY")
 
       # Setup some variables
       input_url = "https://qph.fs.quoracdn.net/main-qimg-53a3aa40f0b577ac69588681fb60d0c3-c"

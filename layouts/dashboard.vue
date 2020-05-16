@@ -6,7 +6,7 @@
           id="email-alert"
           class="subtitle is-6 has-text-weight-bold has-text-centered has-text-white"
         >
-          Welcome to FLOW! To access all features verify your email first.
+          Welcome to Siey! To access all features verify your email first.
         </p>
       </div>
     </div>

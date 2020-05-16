@@ -16,7 +16,7 @@ export default {
       meta: [
         {
           property: 'og:title',
-          content: `Error | Flow`
+          content: `Error | Siey`
         }
       ],
       link: [

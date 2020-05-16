@@ -114,7 +114,7 @@ export default {
   },
   head() {
     return {
-      title: `Try The Flow AI's AI Demo | Flow`
+      title: `Try The Siey AI's AI Demo | Siey`
     }
   },
   computed: {

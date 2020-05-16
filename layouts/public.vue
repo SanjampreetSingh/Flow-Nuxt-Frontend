@@ -23,10 +23,10 @@ export default {
       structuredData: {
         '@context': 'http://www.schema.org',
         '@type': 'Website',
-        url: 'https://theflowai.com/',
+        url: 'https://theSieyai.com/',
         publisher: {
           '@type': 'Organization',
-          name: 'Flow',
+          name: 'Siey',
           logo: {
             '@type': 'ImageObject',
             url: '/icon.png',
@@ -34,14 +34,14 @@ export default {
             width: 640
           }
         },
-        name: 'Flow',
+        name: 'Siey',
         description:
-          'Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workflow.',
+          'Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workSiey.',
         sameAs: [
-          'https://www.facebook.com/flowml/',
-          'https://twitter.com/Flow_ArtInt',
-          'https://www.instagram.com/flow_artint/',
-          'https://www.linkedin.com/company/flow-artint/'
+          'https://www.facebook.com/Sieyml/',
+          'https://twitter.com/Siey_ArtInt',
+          'https://www.instagram.com/Siey_artint/',
+          'https://www.linkedin.com/company/Siey-artint/'
         ]
       }
     }
@@ -51,11 +51,11 @@ export default {
       meta: [
         {
           property: 'og:title',
-          content: `Flow | Machine Intelligence Platform for Developers and Researchers`
+          content: `Siey | Machine Intelligence Platform for Developers and Researchers`
         },
         {
           property: 'og:description',
-          content: `Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workflow.`
+          content: `Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workSiey.`
         },
         {
           property: 'og:type',
@@ -63,15 +63,15 @@ export default {
         },
         {
           property: 'og:url',
-          content: `https://theflowai.com/`
+          content: `https://theSieyai.com/`
         },
         {
           property: 'og:image',
-          content: 'https://theflowai.com/icon.png'
+          content: 'https://theSieyai.com/icon.png'
         },
         {
           name: 'twitter:card',
-          content: `Flow | Machine Intelligence Platform`
+          content: `Siey | Machine Intelligence Platform`
         },
         {
           name: 'twitter:card',
@@ -79,19 +79,19 @@ export default {
         },
         {
           name: 'twitter:url',
-          content: `https://theflowai.com/`
+          content: `https://theSieyai.com/`
         },
         {
           name: 'twitter:title',
-          content: `Flow | Machine Intelligence Platform for Developers and Researchers`
+          content: `Siey | Machine Intelligence Platform for Developers and Researchers`
         },
         {
           name: 'twitter:description',
-          content: `Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workflow.`
+          content: `Small to large businesses can very easily leverage the capabilities of precise machine learning model interfaces in their workSiey.`
         },
         {
           name: 'twitter:image',
-          content: 'https://theflowai.com/icon.png'
+          content: 'https://theSieyai.com/icon.png'
         },
         {
           name: 'apple-mobile-web-app-capable',
@@ -104,13 +104,13 @@ export default {
         {
           name: 'apple-mobile-web-app-title',
           content:
-            'Flow | Machine Intelligence Platform for Developers and Researchers'
+            'Siey | Machine Intelligence Platform for Developers and Researchers'
         }
       ],
       link: [
         {
           rel: 'canonical',
-          href: 'https://theflowai.com' + this.$route.path
+          href: 'https://theSieyai.com' + this.$route.path
         }
       ],
       __dangerouslyDisableSanitizers: ['script'],

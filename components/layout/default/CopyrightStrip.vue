@@ -1,6 +1,6 @@
 <template>
   <footer id="foot" class="is-clipped has-background-dark">
-    <div class="container">
+    <!-- <div class="container">
       <div class="columns">
         <div class="column has-text-centered">
           <logo id="foot-logo" />
@@ -11,7 +11,7 @@
           <div id="icons-list" class="level is-mobile">
             <div class="level-item">
               <a
-                href="https://www.twitter.com/Flow_ArtInt"
+                href="https://www.twitter.com/Siey_ArtInt"
                 aria-label="twitter"
                 target="_blank"
                 rel="noreferrer nofollow noopener"
@@ -21,7 +21,7 @@
             </div>
             <div class="level-item">
               <a
-                href="https://www.linkedin.com/company/flow-api"
+                href="https://www.linkedin.com/company/Siey-api"
                 aria-label="linkedin"
                 target="_blank"
                 rel="noreferrer nofollow noopener"
@@ -31,7 +31,7 @@
             </div>
             <div class="level-item">
               <a
-                href="https://www.instagram.com/flow_artint/"
+                href="https://www.instagram.com/Siey_artint/"
                 aria-label="instagram"
                 target="_blank"
                 rel="noreferrer nofollow noopener"
@@ -41,7 +41,7 @@
             </div>
             <div class="level-item">
               <a
-                href="https://www.facebook.com/flowml"
+                href="https://www.facebook.com/Sieyml"
                 aria-label="facebook"
                 target="_blank"
                 rel="noreferrer nofollow noopener"
@@ -56,11 +56,11 @@
         <div class="column has-text-centered">
           <p id="copyright-content" class="has-text-white">
             Copyright © {{ new Date().getFullYear() }}
-            <span class="has-text-weight-bold">Flow</span> All rights reserved.
+            <span class="has-text-weight-bold">Siey</span> All rights reserved.
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
   </footer>
 </template>
 <script>

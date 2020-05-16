@@ -50,7 +50,7 @@ export default {
       meta: [
         {
           property: 'og:title',
-          content: `Flow | Machine Intelligence Platform for Developers and Researchers`
+          content: `Siey | Machine Intelligence Platform for Developers and Researchers`
         },
         {
           property: 'og:description',
@@ -82,7 +82,7 @@ export default {
         },
         {
           name: 'twitter:title',
-          content: `Flow | Machine Intelligence Platform for Developers and Researchers`
+          content: `Siey | Machine Intelligence Platform for Developers and Researchers`
         },
         {
           name: 'twitter:description',
