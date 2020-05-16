@@ -4,7 +4,8 @@
       <div class="container">
         <div class="navbar-brand">
           <nuxt-link to="/" class="navbar-item" aria-label="home">
-            <logo id="logo" />
+            <!-- <logo id="logo" /> -->
+            <h1>Siey AI</h1>
           </nuxt-link>
           <div
             @click="toggleShow"

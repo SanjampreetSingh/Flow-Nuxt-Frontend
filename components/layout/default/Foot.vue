@@ -3,7 +3,8 @@
     <div class="container">
       <div class="columns">
         <div class="column has-text-centered">
-          <logo id="foot_logo" />
+          <!-- <logo id="foot_logo" /> -->
+          <h1>Siey AI</h1>
         </div>
         <div class="column has-text-centered">
           <h3 class="title is-4">Find Us At</h3>
